@@ -152,7 +152,7 @@ a:hover{
   flex-direction: row;
   position: elative;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 1100px;
@@ -184,7 +184,7 @@ a:hover{
   background-image: url(../images/feynman.png);
   background-position: left bottom;
   background-repeat: no-repeat;
-  background-size: 867px 637px; 
+  background-size: 867px 637px;
   padding-top: 80px;
 }
 .feynman__title {
@@ -209,7 +209,7 @@ a:hover{
   line-height: 51px;
   font-size: 36px;
   right: 48px;
-  color: #2f80ed
+  color: #2f80ed;
 }
 
 /* SECTION "Kaufman" */
@@ -221,7 +221,7 @@ a:hover{
   height: 810px;
 }
 .kaufman__title {
-  color: #fff; 
+  color: #fff;
   font-size: 60px;
   line-height: 1.15em;
   font-weight: bold;
@@ -247,7 +247,7 @@ a:hover{
   flex-direction: row;
   position: relative;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 1100px;
