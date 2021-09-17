@@ -150,7 +150,7 @@ a:hover{
 .table__theme_light {
   display: flex;
   flex-direction: row;
-  position: elative;
+  position: relative;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: auto;
@@ -342,7 +342,7 @@ a:hover{
   height: 16px;
 }
 
-.footer__column-heading {
+h3 {
   line-height:30px;
   font-size:18px;
   font-weight: bold;
