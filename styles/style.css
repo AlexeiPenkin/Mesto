@@ -50,9 +50,12 @@
   bottom: 30px;
   left: 64px;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 }
 .header__link {
   color: #3f80ed;
+  text-decoration: none;
 }
 .header__main-illustration {
   position: absolute;
@@ -61,6 +64,7 @@
   bottom: 0;
   right: 0;
   z-index: 1;
+  object-fit: cover
 }
 .header__square-pic {
   background-color: #2f80ed;
@@ -89,6 +93,7 @@
 .two-columns__brief {
   color: #2f80ed;
   flex-basis: 175px;
+  font-weight: normal;
   line-height: 1.2;
   font-size: 18px;
   display: flex;
@@ -129,7 +134,7 @@
   margin-bottom: 100px;
   margin-top: 100px;
 }
-.digits__section-title {
+.section-title {
   font-size: 60px;
   line-height: 1.15em;
   font-weight: bold;
@@ -139,7 +144,7 @@
   margin-right: auto;
   margin-bottom: 20px;
 }
-.digits__section-subtitle {
+.section-subtitle {
   font-size: 24px;
   line-height: 34px;
   font-weight: normal;
@@ -148,7 +153,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.table_theme_light {
+.table {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -212,6 +217,7 @@
   font-size: 36px;
   right: 48px;
   color: #2f80ed;
+  text-decoration: none;
 }
 /* Конец блока "feynman" */
 /* Начало блока "kaufman" */
@@ -223,7 +229,7 @@
   height: auto;
   width: 100%;
 }
-.section-title_theme_dark {
+.ssection-title_theme_dark {
   color: #fff;
   font-size: 60px;
   line-height: 1.15em;
@@ -251,7 +257,7 @@
   position: relative;
   z-index: 1;
 }
-.table_theme_dark {
+.kaufman__table {
   color: white;
   display: flex;
   flex-direction: row;
@@ -263,21 +269,21 @@
   width: 1100px;
   z-index: 1;
 }
-.table__cell_theme_dark {
+.kaufman__cell {
   width: 200px;
   padding-bottom: 80px;
 }
-.table__cell_theme_dark:nth-child(n+6):nth-child(-n+10) {
+.kaufman__cell:nth-child(n+6):nth-child(-n+10) {
   padding-bottom: 90px;
 }
-.table__heading_theme_dark {
+.kaufman__heading {
   font-size: 24px;
   line-height: 1.15em;
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 20px;
 }
-.table__text_theme_dark {
+.kaufman__text {
   line-height: 1.2em;
   font-size: 18px;
   margin-bottom: 0;
