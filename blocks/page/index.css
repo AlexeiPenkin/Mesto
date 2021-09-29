@@ -1,0 +1,89 @@
+@import url(../../vendor/normalize.css);
+@import url(../root/root.css); /* свойства для всей страницы */
+@import url(../header/header.css); /* блок "header" */
+@import url(../logo/logo.css);
+@import url(../logo/_place/logo_place_header.css);
+@import url(../header/__title/header__title.css);
+@import url(../header/__subtitle/header__subtitle.css);
+@import url(../header/__link/header__link.css);
+@import url(../header/__main-illustration/header__main-illustration.css);
+@import url(../header/__square-pic/header__square-pic.css);
+@import url(../rotation/rotation.css);
+@import url(../description/description.css); /* блок "description" */
+@import url(../two-columns/two-columns.css);
+@import url(../description/__brief/two-columns__brief.css);
+@import url(../description/__main-text/two-columns__main-text.css);
+@import url(../description/__paragraph/two-columns__paragraph.css);
+@import url(../description/__span-accent/two-columns__span-accent.css);
+@import url(../techniques/techniques.css); /* блок "techniques" */
+@import url(../section-title/section-title.css);
+@import url(../section-subtitle/section-subtitle.css);
+@import url(../cards/cards.css);
+@import url(../cards/__item/cards__item.css);
+@import url(../cards/__image/cards__image.css);
+@import url(../cards/__title/cards__title.css);
+@import url(../cards/_description/cards_description.css);
+@import url(../video/video.css); /* блок "video" */
+@import url(../section-title/section-title.css);
+@import url(../section-subtitle/section-subtitle.css);
+@import url(../video/__iframes/video__iframes.css);
+@import url(../video/__iframe/video__iframe.css);
+@import url(../oakly/oakly.css); /* блок "oakly" */
+@import url(../oakly/__two-columns/oakly__two-columns.css);
+@import url(../oakly/__two-columns/_brief/oakly__two-columns_brief.css);
+@import url(../oakly/__two-columns/_main-text/oakly__two-columns_main-text.css);
+@import url(../oakly/__two-columns/_paragraph/oakly__two-columns_paragraph.css);
+@import url(../feynman/feynman.css); /* блок "feynman" */
+@import url(../feynman/__title/feynman__title.css);
+@import url(../feynman/__subtitle/feynman__subtitle.css);
+@import url(../feynman/__link/feynman__link.css);
+@import url(../digits/digits.css); /* блок "digits" */
+@import url(../section-title/section-title.css);
+@import url(../section-subtitle/section-subtitle.css);
+@import url(../table/table.css);
+@import url(../table/__cell/table__cell.css);
+@import url(../table/__heading/table__heading.css);
+@import url(../table/__text/table__text.css);
+@import url(../khan/khan.css); /* блок "khan" */
+@import url(../khan/__container/khan__container.css);
+@import url(../khan/__author/khan__author.css);
+@import url(../khan/__title/khan__title.css);
+@import url(../khan/__quote/khan__quote.css);
+@import url(../khan/__quote-author/khan__quote-author.css);
+@import url(../khan/__quote-author-subline/khan__quote-author-subline.css);
+@import url(../khan/__book-container/khan__book-container.css);
+@import url(../khan/__book-pic/khan__book-pic.css);
+@import url(../khan/__buy-link/khan__buy-link.css);
+@import url(../kaufman/kaufman.css); /* блок "kaufman" */
+@import url(../section-title/section-title.css);
+@import url(../kaufman/_theme_dark/section-title_theme_dark.css);
+@import url(../section-subtitle/section-subtitle.css);
+@import url(../kaufman/_theme_dark/section-subtitle_theme_dark.css);
+@import url(../table/table.css);
+@import url(../kaufman/_theme_dark/table_theme_dark.css);
+@import url(../table/__cell/table__cell.css);
+@import url(../kaufman/_theme_dark/table__cell_theme_dark.css);
+@import url(../table/__text/table__text.css);
+@import url(../kaufman/_theme_dark/table__text_theme_dark.css);
+@import url(../table/__heading/table__heading.css);
+@import url(../kaufman/__triangle/kaufman__triangle.css);
+@import url(../rotation/rotation.css);
+@import url(../resources/resources.css); /* блок "resources" */
+@import url(../section-title/section-title.css);
+@import url(../section-subtitle/section-subtitle.css);
+@import url(../resources/_resources/section-subtitle_resources.css);
+@import url(../resources/__logo-zone/resources__logo-zone.css);
+@import url(../resources/__logo/resources__logo.css);
+@import url(../footer/footer.css); /* блок "footer" */
+@import url(../footer/__columns/footer__columns.css);
+@import url(../footer/__column/footer__column.css);
+@import url(../footer/__column/_content/footer__column_content_copyright.css);
+@import url(../logo/logo.css);
+@import url(../logo/_place/logo_place_footer.css);
+@import url(../footer/__author/footer__author.css);
+@import url(../footer/__column/_content/footer__column_content_info.css);
+@import url(../footer/__column/_content/footer__column_content_social.css);
+@import url(../footer/__column-heading/footer__column-heading.css);
+@import url(../footer/__column-links/footer__column-links.css);
+@import url(../footer/__column-link/footer__column-link.css);
+@import url(../footer/__social-icon/footer__social-icon.css);
