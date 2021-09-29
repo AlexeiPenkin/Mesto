@@ -11,9 +11,9 @@
 @import url(../rotation/rotation.css);
 @import url(../description/description.css); /* блок "description" */
 @import url(../two-columns/two-columns.css);
-@import url(../description/__brief/two-columns__brief.css);
-@import url(../description/__main-text/two-columns__main-text.css);
-@import url(../description/__paragraph/two-columns__paragraph.css);
+@import url(../two-columns/__brief/two-columns__brief.css);
+@import url(../two-columns/__main-text/two-columns__main-text.css);
+@import url(../two-columns/__paragraph/two-columns__paragraph.css);
 @import url(../description/__span-accent/two-columns__span-accent.css);
 @import url(../techniques/techniques.css); /* блок "techniques" */
 @import url(../section-title/section-title.css);
@@ -29,10 +29,10 @@
 @import url(../video/__iframes/video__iframes.css);
 @import url(../video/__iframe/video__iframe.css);
 @import url(../oakly/oakly.css); /* блок "oakly" */
-@import url(../oakly/__two-columns/oakly__two-columns.css);
-@import url(../oakly/__two-columns/_brief/oakly__two-columns_brief.css);
-@import url(../oakly/__two-columns/_main-text/oakly__two-columns_main-text.css);
-@import url(../oakly/__two-columns/_paragraph/oakly__two-columns_paragraph.css);
+@import url(../two-columns/two-columns.css);
+@import url(../two-columns/__brief/two-columns__brief.css);
+@import url(../two-columns/__main-text/two-columns__main-text.css);
+@import url(../two-columns/__paragraph/two-columns__paragraph.css);
 @import url(../feynman/feynman.css); /* блок "feynman" */
 @import url(../feynman/__title/feynman__title.css);
 @import url(../feynman/__subtitle/feynman__subtitle.css);
