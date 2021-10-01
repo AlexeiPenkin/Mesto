@@ -1,5 +1,5 @@
-@import url(../../vendor/normalize.css);
-@import url(../root/root.css); /* свойства для всей страницы */
+@import url(../../pages/normalize.css);
+@import url(../page/page.css); /* свойства для всей страницы */
 @import url(../header/header.css); /* блок "header" */
 @import url(../logo/logo.css);
 @import url(../logo/_place/logo_place_header.css);
@@ -14,7 +14,7 @@
 @import url(../two-columns/__brief/two-columns__brief.css);
 @import url(../two-columns/__main-text/two-columns__main-text.css);
 @import url(../two-columns/__paragraph/two-columns__paragraph.css);
-@import url(../description/__span-accent/two-columns__span-accent.css);
+@import url(../two-columns/__span-accent/two-columns__span-accent.css);
 @import url(../techniques/techniques.css); /* блок "techniques" */
 @import url(../section-title/section-title.css);
 @import url(../section-subtitle/section-subtitle.css);
@@ -28,7 +28,7 @@
 @import url(../section-subtitle/section-subtitle.css);
 @import url(../video/__iframes/video__iframes.css);
 @import url(../video/__iframe/video__iframe.css);
-@import url(../oakly/oakly.css); /* блок "oakly" */
+@import url(../oakley/oakley.css); /* блок "oakley" */
 @import url(../two-columns/two-columns.css);
 @import url(../two-columns/__brief/two-columns__brief.css);
 @import url(../two-columns/__main-text/two-columns__main-text.css);
@@ -56,15 +56,15 @@
 @import url(../khan/__buy-link/khan__buy-link.css);
 @import url(../kaufman/kaufman.css); /* блок "kaufman" */
 @import url(../section-title/section-title.css);
-@import url(../kaufman/_theme_dark/section-title_theme_dark.css);
+@import url(../section-title/_theme/section-title_theme_dark.css);
 @import url(../section-subtitle/section-subtitle.css);
-@import url(../kaufman/_theme_dark/section-subtitle_theme_dark.css);
+@import url(../section-subtitle/_theme/section-subtitle_theme_dark.css);
 @import url(../table/table.css);
-@import url(../kaufman/_theme_dark/table_theme_dark.css);
+@import url(../table/_theme/table_theme_dark.css);
 @import url(../table/__cell/table__cell.css);
-@import url(../kaufman/_theme_dark/table__cell_theme_dark.css);
+@import url(../table/__cell/_theme/table__cell_theme_dark.css);
 @import url(../table/__text/table__text.css);
-@import url(../kaufman/_theme_dark/table__text_theme_dark.css);
+@import url(../table/__text/_theme/table__text_theme_dark.css);
 @import url(../table/__heading/table__heading.css);
 @import url(../kaufman/__triangle/kaufman__triangle.css);
 @import url(../rotation/rotation.css);
@@ -78,7 +78,6 @@
 @import url(../footer/__columns/footer__columns.css);
 @import url(../footer/__column/footer__column.css);
 @import url(../footer/__column/_content/footer__column_content_copyright.css);
-@import url(../logo/logo.css);
 @import url(../logo/_place/logo_place_footer.css);
 @import url(../footer/__author/footer__author.css);
 @import url(../footer/__column/_content/footer__column_content_info.css);

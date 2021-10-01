@@ -3,3 +3,7 @@
     text-decoration: none;
     margin: 0;
   }
+  .footer__column-link:hover {
+    opacity: 50%;
+    transition: 2s ease;
+  }
