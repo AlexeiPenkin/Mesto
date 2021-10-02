@@ -1,5 +1,5 @@
-@import url(../../pages/normalize.css);
-@import url(../page/page.css); /* свойства для всей страницы */
+@import url(../vendor/normalize.css); /* файл "normalize.css" */
+@import url(../page/page.css); /* свойства для "page" */
 @import url(../header/header.css); /* блок "header" */
 @import url(../logo/logo.css);
 @import url(../logo/_place/logo_place_header.css);
@@ -71,9 +71,8 @@
 @import url(../resources/resources.css); /* блок "resources" */
 @import url(../section-title/section-title.css);
 @import url(../section-subtitle/section-subtitle.css);
-@import url(../resources/_resources/section-subtitle_resources.css);
 @import url(../resources/__logo-zone/resources__logo-zone.css);
-@import url(../resources/__logo/resources__logo.css);
+@import url(../blocks/resources/__logo/resources__logo.css);
 @import url(../footer/footer.css); /* блок "footer" */
 @import url(../footer/__columns/footer__columns.css);
 @import url(../footer/__column/footer__column.css);
