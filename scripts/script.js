@@ -4,6 +4,9 @@ const profile = document.querySelector('profile');
 const navButton = document.querySelector('.profile__edit-button');
 let profileName = document.querySelector('.profile__heading');
 let profileProfession = document.querySelector('.profile__text');
+const formElement = document.querySelector('.popup__profile-edit-form');
+let nameInput = formElement.querySelector('.popup__form-name');
+let jobInput = formElement.querySelector('.popup__form-job');
 
 
 function togglePopup() {
@@ -12,19 +15,28 @@ function togglePopup() {
 
 function openPopup() {
     popupElement.classList.remove('hidden');
+    
+    nameInput.value = profileName.textContent('popup__form-name');
+   
+    jobInput.value = profileName.textContent('popup__form-job');
 }
 
-function showProfile() {
-    profileName.classList.add('profile__heading');
-   
-    profileProfession.classList.add('profile__text');
+function formSubmitHandler (evt) {
+    evt.preventDefault();
+    // Вставьте новые значения с помощью textContent
     
-    console.log('profileName');
+    let jobInput = formElement.querySelector('.popup__form-job');
+
+    let nameInput = formElement.querySelector('.popup__form-name');
     
-    console.log('profileProfession');
-    
-    showProfile();
+    jobInput.value = profileName.textContent('popup__form-job');
+
+    nameInput.value = profileName.textContent('popup__form-name');
+
+    closePopup();
 }
+
+formElement.addEventListener('submit', formSubmitHandler); 
 
 function closePopup() {
     popupElement.classList.add('hidden');
@@ -34,7 +46,7 @@ navButton.addEventListener('click', openPopup)
 closeButton.addEventListener('click', closePopup)
 
 document.addEventListener('keyup', (event) => {
-    if (event.keyCode === 27) {
+    if (event.key === "Escape") {
         closePopup();
     }
 });
