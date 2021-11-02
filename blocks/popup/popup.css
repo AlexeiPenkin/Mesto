@@ -1,0 +1,17 @@
+.popup {
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    max-width: 1280px;
+    min-height: 1217px;
+    z-index: 100;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #000000;
+}

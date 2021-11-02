@@ -1,0 +1,13 @@
+.header__line {
+    max-width: 880px;
+    opacity: 0.7;
+    border-bottom: 1px solid #545454;
+    justify-self: center;
+}
+/* @media screen and (min-width: 320px) {
+    .header__line {
+        max-width: 100vw;
+        margin: 0;
+        margin-bottom: 11.95vw;
+    }
+  } */

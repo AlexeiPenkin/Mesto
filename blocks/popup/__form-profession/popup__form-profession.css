@@ -1,0 +1,13 @@
+.popup__form-profession {
+    /* box-sizing: border-box; */
+    border: none;
+    /* display: inline-block; */
+    max-width: 358px;
+    min-height: 27px;
+    font-size: 14px;
+    line-height: 17px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}

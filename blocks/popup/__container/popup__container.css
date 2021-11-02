@@ -1,0 +1,15 @@
+.popup__container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 430px;
+    height: 330px;
+    margin: 0 auto;
+    padding-left: 2.81vw;
+    padding-right: 2.81vw;
+    margin-top: 195px;
+    margin-left: 425px;
+    margin-right: 425px;
+    margin-bottom: auto;
+}

@@ -1,0 +1,14 @@
+.header__logo {
+    color: #fff;
+    max-width: 142px;
+    min-height: 33px;
+    margin: 0;
+    margin-bottom: 41px;
+}
+/* @media screen and (min-width: 320px) and (max-width: 1023px) {
+    .header__logo {
+        max-width: 32.41vw;
+        min-height: 7.62vw; 
+        margin-left: 8.43vw;
+    }
+  }*/
