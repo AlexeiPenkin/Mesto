@@ -7,6 +7,8 @@
 # Технологии
 HTML
 CSS
+Flex
+Grid Layout
 
 # Реализация
 1. Флексбокс вёрстки.
@@ -21,3 +23,4 @@ CSS
 10. Отправка формы "Submit".
 
 # H3 Ссылка на GitHub
+https://github.com/AlexeiPenkin/Mesto
