@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./pages/index.css">
-  <title>Научиться учиться</title>
+  <title>Mesto</title>
 </head>
 <body>
 <div class="page">
@@ -16,17 +16,15 @@
       <section class="profile">
         <div class="profile__avatar"></div>
         <div class="profile__info">
-          <div class="profile__wrapper">
-            <p class="profile__heading">Жак-Ив Кусто</p>
-              <img class="profile__edit-button" src="image/Edit-Button.svg" alt="Кнопка редактирования профиля">
-          </div>
-          <p class="profile__text">Исследователь океана</p>
+          <h1 class="profile__heading">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button" type="button"></button>
+          <h2 class="profile__description">Исследователь океана</h2>
         </div>
         <button class="profile__add-button">
           <img class="profile__add-button_plus-sign" src="image/Add-Button_Plus-Sign.svg" alt="Знак плюс">
         </button>
       </section>
-      <section class="elements"> 
+      <section class="elements">
           <div class="element">
             <div class="element__rectangle">
               <img class="element__image" src="./image/01_Камчатка.jpg" alt="Камчатка">
@@ -89,14 +87,14 @@
 </div>
 <div class="popup">
     <section class="popup__container">
-      <button class="popup__close-button"></button>
+      <button class="popup__close-button" type="button"></button>
       <form class="popup__profile-edit-form">
         <h3 class="popup__title">Редактировать профиль</h3>
         <input class="popup__form-name"></input>
         <div class="popup__form-line"></div>
         <input class="popup__form-job"></input>
         <div class="popup__form-line"></div>
-        <button type="submit" class="popup__submit-button">Сохранить</button>
+        <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
     </section>
 </div>

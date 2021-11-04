@@ -1,22 +1,60 @@
 .footer {
-    max-width: 318px;
+    max-width: 880px;
     min-height: 18px;
     margin: 0;
+    padding: 0;
     margin-left: 200px;
+    margin-right: 200px;
     margin-bottom: 60px;
     color: #545454;
-
 }
-/* @media screen and (min-width: 320px) {
+
+@media screen and (min-width: 1280px) {
     .footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 88.125vw;
-        min-height: 4.375vw;
-        margin: 0;
-        margin-left: 5.93vw;
-        margin-right: 5.93vw;
-        margin-bottom: 11.25vw;
+        max-width: 880px;
+        min-height: 18px;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 60px;
     }
-  } */
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .footer {
+        max-width: 880px;
+        min-height: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 54px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        max-width: 581px;
+        min-height: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 48px;
+    }
+  }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .footer {
+        max-width: 282px;
+        min-height: 14px;
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 36px;
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 424px) {
+    .footer {
+        max-width: 282px;
+        min-height: 14px;
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 36px;
+    }
+  }

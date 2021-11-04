@@ -1,7 +1,5 @@
 .popup__form-name {
-    /* box-sizing: border-box; */
     border: none;
-    /* display: inline-block; */
     max-width: 358px;
     min-height: 27px;
     font-size: 14px;

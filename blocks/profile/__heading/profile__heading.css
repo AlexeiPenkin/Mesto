@@ -1,27 +1,66 @@
 .profile__heading {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
+    max-width: 294px;
+    min-height: 39px;
     font-size: 42px;
     line-height: 48px;
-    margin-top: 22px;
-    margin-bottom: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    padding-top: 22px;
+    padding-bottom: 16px;
     padding-right: 18px;
     
 }
-@media screen and (min-width: 320px) and (max-width: 1023px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
     .profile__heading {
-        font-size: 8.4375vw;
-        line-height: 10.31vw;
-        justify-content: space-between;
-        align-self: center;
-        text-align: center;
-        max-width: 59.06vw;
-        min-height: 8.125vw;
+        max-width: 240px;
+        min-height: 32px;
+        font-size: 3.28vw;
+        line-height: 3.75vw;
         margin: 0;
         padding: 0;
-        margin-top: 0;
-        margin-bottom: 4.375vw;
-        padding-right: 3.125vw;
+        padding-top: 22px;
+        padding-bottom: 16px;
+        padding-right: 18px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .profile__heading {
+        max-width: 189px;
+        min-height: 26px;
+        justify-self: left;
+        font-size: 27px;
+        line-height: 33px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        margin-top: 22px;
+        margin-bottom: 14px;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .profile__heading {
+        max-width: 189px;
+        min-height: 26px;
+        justify-self: center;
+        font-size: 27px;
+        line-height: 33px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 14px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 424px) {
+    .profile__heading {
+        max-width: 189px;
+        min-height: 26px;
+        justify-self: center;
+        font-size: 27px;
+        line-height: 33px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 14px;
     }
 }

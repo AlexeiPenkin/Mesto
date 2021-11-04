@@ -1,7 +1,5 @@
-.popup__form-profession {
-    /* box-sizing: border-box; */
+.popup__form-job {
     border: none;
-    /* display: inline-block; */
     max-width: 358px;
     min-height: 27px;
     font-size: 14px;

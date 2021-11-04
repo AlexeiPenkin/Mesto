@@ -2,7 +2,6 @@
     max-width: 282px;
     min-height: 361px;
     align-content: center;
-    /* border-style: none; */
     background-color: #fff;
     border-radius: 3%;
     z-index: 0;
@@ -11,10 +10,3 @@
 .element:hover {
     box-shadow: 0 0 30px #4E52B0;
 }
-/* @media screen and (min-width: 320px) and (max-width: 1279px) {
-    .element {
-        max-width: 88.125vw;
-        min-height: 113.125vw;
-        margin: 0;
-    }
-  } */
