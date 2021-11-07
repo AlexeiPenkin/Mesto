@@ -1,14 +1,14 @@
 .element__like-button {
-    background-image: url(../../../image/Like-Button_Disabled.jpg);
+    background-image: url(../../../image/Like-Button_Disabled.svg);
     background-repeat: no-repeat;
+    background-color: #fff;
+    border: none;
     align-self: center;
     width: 22px;
     height: 19px;
     margin: 0;
     padding: 0;
     margin-right: 0;
-    margin-left: auto;
-
 }
 
 .element__like-button:hover {
@@ -16,6 +16,6 @@
     cursor: pointer;
 }
 .element__like-button:active {
-    background-image: url(../../../image/Like-Button_Active.jpg);
+    background-image: url(../../../image/Like-Button_Active.svg);
     cursor: pointer;
 }

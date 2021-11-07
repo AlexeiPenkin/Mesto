@@ -3,63 +3,28 @@
     flex-direction: row;
     align-content: center;
     max-width: 880px;
-    height: 120px;
-    margin-left: 200px;
-    margin-right: 200px;
+    min-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 51px;
 }
 
-@media screen and (min-width: 1280px) {               
-    .profile {
-        margin-left: 200px;
-        margin-right: 200px;
-        margin-bottom: 51px;
-    }
-  }
   @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .profile {
-      display: flex;
-      flex-direction: row;
-      align-content: center;
       max-width: 880px;
-      height: 120px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 51px;
     }
 }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .profile {
-      display: flex;
       flex-direction: row;
       align-content: center;
       max-width: 581px;
       height: 120px;
-      margin-left: auto;
-      margin-right: auto;
       margin-bottom: 51px;
     }
   }
-  @media screen and (min-width: 425px) and (max-width: 767px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .profile {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-content: center;
-      justify-self: center;
-      align-self: center;
-      max-width: 282px;
-      min-height: 286px;
-      margin: 0;
-      padding: 0;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 36px;
-    }
-  }
-  @media screen and (min-width: 320px) and (max-width: 424px) {
-    .profile {
-        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-content: center;

@@ -1,12 +1,11 @@
 .popup {
-    font-family: Arial, sans-serif;
-    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter', Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.6);
     position: fixed;
     max-width: 1280px;
-    min-height: 1217px;
     z-index: 100;
     margin: 0 auto;
     top: 0;

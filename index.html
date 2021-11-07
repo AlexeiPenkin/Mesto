@@ -9,18 +9,18 @@
 <body>
 <div class="page">
     <header class="header">
-      <div><img class="header__logo" src="image/Header_Mesto_Logo.png" alt="Логотип"></div>
+      <img class="header__logo" src="image/Header_Mesto_Logo.png" alt="Логотип">
       <div class="header__line"></div>
     </header>
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar"></div>
+        <img class="profile__avatar" src="image/custo.jpg" alt="Путешественник и учёный Жак-Ив Кусто">
         <div class="profile__info">
           <h1 class="profile__heading">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button"></button>
           <h2 class="profile__description">Исследователь океана</h2>
         </div>
-        <button class="profile__add-button">
+        <button class="profile__add-button" type="submit">
           <img class="profile__add-button profile__add-button_plus-sign" src="image/Add-Button_Plus-Sign.svg" alt="Знак плюс">
         </button>
       </section>
@@ -30,7 +30,7 @@
               <img class="element__image" src="./image/01_Камчатка.jpg" alt="Камчатка">
               <div class="element__bottom">
                 <h3 class="element__title">Камчатка</h3>
-                <div class="element__like-button"></div>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
               <img class="element__image" src="./image/02_Уральские-горы.jpg" alt="Уральские горы">
               <div class="element__bottom">
                 <h3 class="element__title">Уральские горы</h3>
-                <div class="element__like-button"></div>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>  
@@ -48,7 +48,7 @@
               <img class="element__image" src="./image/03_Озеро-Байкал.jpg" alt="Озеро Байкал">
               <div class="element__bottom">
                 <h3 class="element__title">Озеро Байкал</h3>
-                <div class="element__like-button"></div>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>
@@ -56,8 +56,8 @@
             <div class="element__rectangle">
               <img class="element__image" src="./image/04_Домбай.jpg" alt="Домбай">
               <div class="element__bottom">
-                <h2 class="element__title">Домбай</h2>
-                <div class="element__like-button"></div>
+                <h2 class="element__title">Домбай, Карачаево-Черкесия</h2>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
               <img class="element__image" src="./image/05_Эльбрус.jpg" alt="Эльбрус">
               <div class="element__bottom">
                 <h2 class="element__title">Эльбрус</h2>
-                <div class="element__like-button"></div>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
               <img class="element__image" src="./image/06_Карелия.jpg" alt="Карелия">
               <div class="element__bottom">
                 <h2 class="element__title">Карелия</h2>
-                <div class="element__like-button"></div>
+                <button class="element__like-button" type="button"></button>
               </div>
             </div>
           </div>
@@ -85,17 +85,19 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 </div>
-<div class="popup">
+<div class="popup hidden">
     <section class="popup__container">
-      <button class="popup__close-button" type="button"></button>
-      <form class="popup__profile-edit-form">
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__form-name">
-        <div class="popup__form-line"></div>
-        <input class="popup__form-job">
-        <div class="popup__form-line"></div>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__edit-form">
+        <button class="popup__close-button" type="button"></button>
+        <fieldset class="input-form">
+          <input class="input-form input-form__name" type="text" name="name" placeholder="Имя">
+          <div class="input-form__line"></div>
+          <input class="input-form input-form__job" type="text" name="job" placeholder="О себе">
+          <div class="input-form__line"></div>
+        </fieldset>
         <button class="popup__submit-button" type="submit">Сохранить</button>
-      </form>
+    </form>
     </section>
 </div>
 <script src="./scripts/script.js"></script>

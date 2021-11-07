@@ -1,5 +1,4 @@
 .header__logo {
-    color: #fff;
     max-width: 142px;
     min-height: 33px;
     margin: 0;
@@ -10,9 +9,6 @@
     .header__logo {
       max-width: 132.5px;
       min-height: 31px;
-      margin: 0;
-      padding: 0;
-      padding-left: 0;
       margin-bottom: 38.65px;
     }
   }
@@ -20,8 +16,6 @@
     .header__logo {
       max-width: 123px;
       min-height: 29px;
-      margin: 0;
-      padding: 0;
       padding-left: 0;
       margin-bottom: 36.3px;
     }
@@ -30,8 +24,6 @@
     .header__logo {
       max-width: 113.5px;
       min-height: 27px;
-      margin: 0;
-      padding: 0;
       padding-left: 70.25px;
       margin-bottom: 33.95px;
     }
