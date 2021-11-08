@@ -10,26 +10,18 @@
 
   @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .footer {
-        max-width: 880px;
-        min-height: 17px;
         padding-bottom: 54px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .footer {
         max-width: 581px;
-        min-height: 16px;
         padding-bottom: 48px;
     }
   }
   @media screen and (min-width: 320px) and (max-width: 767px) {
     .footer {
         max-width: 282px;
-        min-height: 14px;
-        margin: 0;
-        padding: 0;
-        margin-left: auto;
-        margin-right: auto;
         padding-bottom: 36px;
     }
   }

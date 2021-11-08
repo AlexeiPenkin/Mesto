@@ -1,9 +1,0 @@
-.input-form__line {
-    border-bottom: 1px solid #000;
-    max-width: 358px;
-    opacity: 0.2;
-    margin-bottom: 30px;
-}
-.input-form__line:nth-of-type(2n) {
-    margin-bottom: 0;
-}

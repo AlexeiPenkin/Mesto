@@ -1,6 +1,5 @@
 .header__logo {
     max-width: 142px;
-    min-height: 33px;
     margin: 0;
     margin-bottom: 41px;
 }
@@ -8,14 +7,12 @@
   @media screen and (min-width: 1024px)and (max-width: 1279px) {
     .header__logo {
       max-width: 132.5px;
-      min-height: 31px;
       margin-bottom: 38.65px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .header__logo {
       max-width: 123px;
-      min-height: 29px;
       padding-left: 0;
       margin-bottom: 36.3px;
     }
@@ -23,7 +20,6 @@
   @media screen and (min-width: 425px) and (max-width: 767px) {
     .header__logo {
       max-width: 113.5px;
-      min-height: 27px;
       padding-left: 70.25px;
       margin-bottom: 33.95px;
     }
@@ -31,7 +27,6 @@
   @media screen and (min-width: 320px) and (max-width: 424px){
     .header__logo {
       max-width: 104px;
-      min-height: 25px;
       margin: 0;
       padding: 0;
       padding-left: 27px;

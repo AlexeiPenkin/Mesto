@@ -1,6 +1,7 @@
 .popup__container {
     display: flex;
     flex-direction: column;
+    position: relative;
     border-radius: 15px;
     background-color: #fff;
     margin: 0 auto;
@@ -16,12 +17,7 @@
     .popup__container {
         max-width: 282px;
         min-height: 322px;
-        margin: 0 auto;
         padding-left: 22px;
         padding-right: 22px;
-        margin-top: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
     }
 }

@@ -3,6 +3,7 @@
     min-height: 50px;
     margin: 0;
     padding: 0;
+    border: none;
     font-size: 18px;
     line-height: 22px;
     background-color: #000;
@@ -10,14 +11,13 @@
     margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 37px;
     border-radius: 2px;
+    transition: 1s ease;
 }
 .popup__submit-button:hover {
     border-radius: 2px;
-    opacity: 60%;
-    transition: 1s ease;
     cursor: pointer;
+    opacity: 60%;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .popup__submit-button {
@@ -26,8 +26,6 @@
         font-size: 14px;
         line-height: 17px;
         margin-top: 45px;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 25px;
     }
 }

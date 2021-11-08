@@ -1,4 +1,4 @@
-.profile__description {
+.profile__job {
     font-size: 18px;
     line-height: 22px;
     font-weight: 400;
@@ -6,22 +6,14 @@
     justify-self: left;
     margin: 0;
     padding: 0;
+    padding-top: 16px;
     padding-bottom: 25px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .profile__description {
-        font-size: 14px;
-        line-height: 17px;
-        padding-bottom: 25px;
-    }
-  }
-    @media screen and (min-width: 320px) and (max-width: 767px) {
-    .profile__description {
-        max-width: 282px;
-        min-height: 14px;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .profile__job {
         justify-self: center;
         font-size: 14px;
         line-height: 17px;

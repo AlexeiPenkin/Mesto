@@ -22,5 +22,5 @@ Grid Layout
 9. Переполнение содержимого в блоке.
 10. Отправка формы "Submit".
 
-# H3 Ссылка на GitHub
+# Ссылка на GitHub
 https://github.com/AlexeiPenkin/Mesto
