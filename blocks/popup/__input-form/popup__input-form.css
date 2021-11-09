@@ -17,6 +17,9 @@
 .popup__input-form:nth-of-type(2n) {
     margin-bottom: 0;
 }
+.popup__input-form:last-child {
+    border-bottom: none;
+}
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .popup__input-form {
         width: 100%;

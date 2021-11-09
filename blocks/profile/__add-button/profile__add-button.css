@@ -1,12 +1,12 @@
 .profile__add-button {
+  background-image: url(../../../image/Add-Button_Plus-Sign.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   justify-self: right;
-  background-image: url(../../../image/Add-Button_Plus-Sign.svg);
-  background-position: center;
-  background-repeat: no-repeat;
   border: 2px solid #fff;
   max-width: 154px;
   min-height: 41px;
@@ -24,6 +24,24 @@
   opacity: 60%;
   transition: 1s ease;
   cursor: pointer;
+}
+@media screen and (min-width: 1280px) {
+  .profile__add-button {
+      justify-self: right;
+      width: 100%;
+      margin-top: 36.75px;
+      margin-bottom: 36.75px;
+      margin-left: auto;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .profile__add-button {
+      justify-self: right;
+      width: 100%;
+      margin-top: 36.75px;
+      margin-bottom: 36.75px;
+      margin-left: auto;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .profile__add-button {
