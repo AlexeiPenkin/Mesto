@@ -23,4 +23,4 @@ Grid Layout
 10. Отправка формы "Submit".
 
 # Ссылка на GitHub
-https://github.com/AlexeiPenkin/Mesto
+https://alexeipenkin.github.io/Mesto/index.html
