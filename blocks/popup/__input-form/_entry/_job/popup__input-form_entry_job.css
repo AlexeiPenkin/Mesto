@@ -1,0 +1,8 @@
+.popup__input-form_entry_job {
+    padding-bottom: 10px;
+}
+@media screen and (min-width: 320px) and (max-width: 617px) {
+    .popup__input-form_entry_job {
+        padding-bottom: 10px;
+    }
+}

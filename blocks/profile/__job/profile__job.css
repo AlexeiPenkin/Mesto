@@ -1,23 +1,24 @@
 .profile__job {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 21.78px;
     font-weight: 400;
-    max-width: 336px;
     justify-self: left;
     margin: 0;
     padding: 0;
-    padding-top: 16px;
+    padding-top: 5px;
     padding-bottom: 25px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 617px) {
     .profile__job {
         justify-self: center;
         font-size: 14px;
-        line-height: 17px;
-        margin: 0;
-        padding: 0;
+        line-height: 16.94px;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: auto;
+        padding-right: 10px;
     }
   }

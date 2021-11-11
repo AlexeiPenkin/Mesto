@@ -1,12 +1,11 @@
 .element {
+    display: flex;
+    flex-direction: column;
     max-width: 282px;
     min-height: 361px;
     align-content: center;
     background-color: #fff;
-    border-radius: 3%;
-    z-index: 0;
-    transition: box-shadow 0.3s ease;
-}
-.element:hover {
-    box-shadow: 0 0 30px #4E52B0;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
 }

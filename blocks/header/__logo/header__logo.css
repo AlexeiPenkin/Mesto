@@ -1,35 +1,27 @@
 .header__logo {
     max-width: 142px;
     margin: 0;
-    margin-bottom: 41px;
+    padding-left: 0;
+    padding-bottom: 41px;
 }
-
-  @media screen and (min-width: 1024px)and (max-width: 1279px) {
-    .header__logo {
-      max-width: 132.5px;
-      margin-bottom: 38.65px;
-    }
-  }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: 768px) and (max-width: 900px) {
     .header__logo {
       max-width: 123px;
-      padding-left: 0;
-      margin-bottom: 36.3px;
+      padding-left: 27px;
     }
   }
-  @media screen and (min-width: 425px) and (max-width: 767px) {
+  @media screen and (min-width: 618px) and (max-width: 767px) {
     .header__logo {
       max-width: 113.5px;
-      padding-left: 70.25px;
-      margin-bottom: 33.95px;
+      padding-left: 27px;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 424px){
+  @media screen and (min-width: 320px) and (max-width: 617px){
     .header__logo {
-      max-width: 104px;
+      max-width: 103.74px;
       margin: 0;
       padding: 0;
       padding-left: 27px;
-      margin-bottom: 31.6px;
+      padding-bottom: 31.6px;
     }
   }

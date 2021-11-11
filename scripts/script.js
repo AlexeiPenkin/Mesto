@@ -22,7 +22,7 @@ function formSubmitHandler (evt) {
     closePopup();
 }
 
-formElement.addEventListener('popup__submit-button', formSubmitHandler);
+formElement.addEventListener('submit', formSubmitHandler);
 
 function closePopup() {
     popupElement.classList.remove('popup_opened');
