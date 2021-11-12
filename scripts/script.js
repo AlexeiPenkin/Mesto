@@ -4,9 +4,9 @@ const profile = document.querySelector('profile');
 const navButton = document.querySelector('.profile__edit-button');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__job');
-const formElement = document.querySelector('.popup__container');
-let nameInput = formElement.querySelector('[name="input-form_name"]');
-let jobInput = formElement.querySelector('[name="input-form_job"]');
+const formElement = document.querySelector('.popup__form');
+let nameInput = formElement.querySelector('[name="name"]');
+let jobInput = formElement.querySelector('[name="job"]');
 
 
 function openPopup() {

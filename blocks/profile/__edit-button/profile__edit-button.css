@@ -20,7 +20,6 @@
     .profile__edit-button {
         max-width: 19px;
         min-height: 19px;
-        align-self:flex-end;
     }
   }
   @media screen and (min-width: 320px) and (max-width: 617px) {
