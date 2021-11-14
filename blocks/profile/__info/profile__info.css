@@ -12,7 +12,7 @@
 }
 @media screen and (min-width: 618px) and (max-width: 900px) {
   .profile__info {
-      grid-template-columns: auto 19px;
+      grid-template-columns: 263px 19px;
       justify-content: flex-start;
   }
 }
