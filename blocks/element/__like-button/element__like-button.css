@@ -12,8 +12,5 @@
     cursor: pointer;
 }
 .element__like-button:hover {
-    opacity: 60%;
-}
-.element__like-button:active {
-    background-image: url(../../../image/Like-Button_Active.svg);
+    opacity: 0.6;
 }

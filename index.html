@@ -7,11 +7,11 @@
   <title>Mesto</title>
 </head>
 <body>
-<div class="page">
+  <div class="page">
     <header class="header">
-      <img class="header__logo" src="image/Header_Mesto_Logo.png" alt="Логотип">
+        <a href="#"><img src="./image/Header_Mesto_Logo.png" alt="Логотип Mesto" class="header__logo"></a>
     </header>
-    <main class="content">
+    <main>
       <section class="profile">
         <img class="profile__avatar" src="image/custo.jpg" alt="Путешественник и учёный Жак-Ив Кусто">
         <div class="profile__info">
@@ -21,66 +21,58 @@
         </div>
         <button class="profile__add-button" type="submit"></button>
       </section>
+      <div class="popup editProfile">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button"></button>
+          <form class="form" name="form-editProfile">
+            <h2 class="form__title">Редактировать профиль</h2>
+            <input class="form__input" type="text" name="form_name" placeholder="Имя" required>
+            <input class="form__input" type="text" name="form_job" placeholder="Профессия" required>
+            <button class="form__submit-button" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup addCard">
+        <div class="popup__container">
+          <button type="button" class="popup__close-button addCard__close"></button>
+            <form class="form" name="form-addCard">
+              <h2 class="form__title">Новое место</h2>
+                <input class="form__input" type="text" name="card_title" placeholder="Название" required>
+                <input class="form__input" type="text" name="card_link" placeholder="Ссылка на картинку" required>
+                <button class="form__submit-button" type="submit">Создать</button>
+            </form>
+        </div>
+      </div>
       <section class="elements">
-          <div class="element">
-              <img class="element__image" src="./image/01_Камчатка.jpg" alt="Камчатка">
-              <div class="element__bottom">
-                <h3 class="element__title">Камчатка</h3>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>
-          <div class="element">
-              <img class="element__image" src="./image/02_Уральские-горы.jpg" alt="Уральские горы">
-              <div class="element__bottom">
-                <h3 class="element__title">Уральские горы</h3>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>  
-          <div class="element">
-              <img class="element__image" src="./image/03_Озеро-Байкал.jpg" alt="Озеро Байкал">
-              <div class="element__bottom">
-                <h3 class="element__title">Озеро Байкал</h3>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>
-          <div class="element">
-              <img class="element__image" src="./image/04_Домбай.jpg" alt="Домбай">
-              <div class="element__bottom">
-                <h2 class="element__title">Домбай, Карачаево-Черкесия</h2>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>
-          <div class="element">
-              <img class="element__image" src="./image/05_Эльбрус.jpg" alt="Эльбрус">
-              <div class="element__bottom">
-                <h2 class="element__title">Эльбрус</h2>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>
-          <div class="element">
-              <img class="element__image" src="./image/06_Карелия.jpg" alt="Карелия">
-              <div class="element__bottom">
-                <h2 class="element__title">Карелия</h2>
-                <button class="element__like-button" type="button"></button>
-              </div>
-          </div>
       </section>
+      <div class="popup popupImage">
+        <div class="popupImage__container">
+          <div class="popupImage__content">
+            <button type="button" class="popupImage__close-button"></button>
+            <figure class="popupImage__figure">
+              <img class="popupImage__image">
+                <figcaption>
+                  <p class="popupImage__title"></p>
+                </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer">
-      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-</div>
-<div class="popup">
-  <section class="popup__container">
-    <h2 class="popup__title">Редактировать профиль</h2>
-    <button class="popup__close-button" type="button"></button>
-    <form class="popup__form" name="popup__form">
-      <input class="popup__input" type="text" name="name" placeholder="Имя">
-      <input class="popup__input" type="text" name="job" placeholder="О себе">
-      <button class="popup__submit-button" type="submit">Сохранить</button>
-    </form>
-  </section>
-</div>
-<script src="./scripts/script.js"></script>
+<template id="element-template">
+    <article class="element">
+        <img class="element__image">
+        <button class="element__delete-button" type="button"></button>
+        </button>
+        <div class="element__group">
+            <h2 class="element__title"></h2>
+            <button class="element__like-button" type="button"></button>
+        </div>
+    </article>
+</template>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>
