@@ -1,5 +1,5 @@
-.element__like-button {
-    background-image: url(../../../image/Like-Button_Disabled.svg);
+.card__button_like {
+    background-image: url(../../../image/Like-Button_Disabled.jpg);
     background-repeat: no-repeat;
     background-color: #fff;
     border: none;
@@ -11,6 +11,6 @@
     margin-right: 5px;
     cursor: pointer;
 }
-.element__like-button:hover {
+.card__button_like:hover {
     opacity: 0.6;
 }

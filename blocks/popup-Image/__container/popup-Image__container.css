@@ -1,4 +1,4 @@
-.popup-Image__container {
+.popup-image__container {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -6,16 +6,4 @@
   padding: 0;
   margin-top: auto;
   margin-bottom: auto;
-}
-@media screen and (min-width: 320px) and (max-width: 617px) {
-  .popup-Image__container {
-      max-width: 282px;
-      min-height: 322px;
-      margin: 0;
-      padding: 0;
-      padding-left: 22px;
-      padding-right: 22px;
-      margin-left: 19px;
-      margin-right: 19px;
-  }
 }

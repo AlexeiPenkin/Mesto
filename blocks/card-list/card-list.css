@@ -1,15 +1,17 @@
-.elements {
+.card-list {
     display: grid;
     max-width: 880px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px 17px;
+    margin: 0;
+    padding: 0;
     margin-left: auto;
     margin-right: auto;
   }
 
 @media screen and (min-width: 618px) and (max-width: 900px) {
-    .elements {
+    .card-list {
         grid-template-columns: repeat(2, 282px);
         grid-template-rows: repeat(3, 1fr);
         max-width: 751px;
@@ -17,7 +19,7 @@
     }
   }
 @media screen and (min-width: 320px) and (max-width: 617px) {
-    .elements {
+    .card-list {
         grid-template-columns: repeat(1, 282px);
         grid-template-rows: repeat(6, 1fr);
         gap: 20px;

@@ -1,11 +1,11 @@
-.element__like-button_active {
+.card__button_like_active {
     border: none;
     cursor: pointer;
     background: none;
     width: 24px;
     height: 19px;
     padding: 0;
-    background-image: url('../../../../image/Like-Button_Active.svg');
+    background-image: url(../../../../image/Like-Button_Active.jpg);
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -14,11 +14,13 @@
   border-radius: 2px;
   transition: 1s ease;
 }
+
 .form__submit-button:hover {
   border-radius: 2px;
   cursor: pointer;
   opacity: 0.6;
 }
+
 @media screen and (min-width: 320px) and (max-width: 617px) {
   .form__submit-button {
       max-width: 238px;
