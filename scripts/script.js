@@ -57,8 +57,6 @@ const initialCards = [
   },
 ];
 
-
-
 // Переборр массива - вставка начальных карточек - создание новой карточки ========================= //
 
 const createCard = (cardInfo) => {
@@ -94,9 +92,6 @@ const result = initialCards.map((cardInfo) => {
 });
 
 cardList.prepend(...result);
-
-
-
 
 // ProfileEdit - форма редактирования профиля =================================== //
 
@@ -134,8 +129,6 @@ function closeProfileEditPopup() { // closeProfileEditPopup = closePopup
 
 // закрытие формы ProfileEdit по кнопке profileEditCloseButton
 profileEditCloseButton.addEventListener("click", closeProfileEditPopup); // closeProfileEditPopup = closePopup
-
-
 
 // AddCard - форма добавления карточки =================================== //
 
@@ -190,7 +183,6 @@ popupImageCloseButton.addEventListener("click", () => {popupImageOpen.classList.
     evt.target.classList.toggle("card__button_like_active");
   });
 }
-
 
 // ззакрытие формы AddCard по кнопке addCardCloseButton
 function closeAddCardPopup(popupAddCard) {
