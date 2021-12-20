@@ -28,8 +28,8 @@
           <form class="form" name="form-edit-profile" novalidate> 
             <h2 class="form__title">Редактировать профиль</h2> 
             <fieldset class="form__set">
-              <input class="form__input" type="text" id="text-input" name="form_name" placeholder="Введите имя" minlength="2" maxlength="40" required>
-              <input class="form__input" type="text" id="text-input" name="form_job" placeholder="Введите информацию о себе" minlength="2" maxlength="200" required>
+              <input class="form__input" type="text" name="form_name" id="name-input" placeholder="Введите имя">
+              <input class="form__input" type="text" name="form_job" id="job-input" placeholder="Введите информацию о себе">
               <button type="submit" class="form__submit-button">Сохранить</button>
             </fieldset>
           </form> 
@@ -42,8 +42,8 @@
           <form class="form" id='form' name="form-add-card"> 
           <h2 class="form__title">Новое место</h2> 
             <fieldset class="form__set">
-              <input class="form__input" type="text" id="text-input" name="card_title" placeholder="Название" minlength="1" maxlength="30" required>
-              <input class="form__input" type="url" id="url-input" name="card_link" placeholder="Ссылка на картинку" required>
+              <input class="form__input" type="text" name="card_title" id="title-input" placeholder="Название">
+              <input class="form__input" type="url" name="card_link" id="link-input" placeholder="Ссылка на картинку">
               <button type="submit" class="form__submit-button">Создать</button> 
             </fieldset>
           </form> 
