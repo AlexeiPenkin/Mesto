@@ -99,11 +99,16 @@ const createCard = (cardInfo) => {
   return cardListItem;
 };
 
-const result = initialCards.map((cardInfo) => {
-  return createCard(cardInfo);
-});
+const renderCard = (name, link) => {
+  const newCard = createCard({
+    name, link
+  })
 
-cardList.prepend(...result);
+  cardList.prepend(newCard);
+}
+
+const cards = initialCards.map(createCard);
+cardList.prepend(...cards);
 
 // Функция открытия модального окна (openPopup) =================================== //
 function openPopup(popup) {
@@ -162,7 +167,12 @@ addCardButton.addEventListener("click", () => openAddCardPopup(popupAddCard));
 // отправка и передача данных из формы AddCard
 function submitAddCardForm(evt) {
   evt.preventDefault();
-  addCard(evt);
+
+  const nameInputValue = inputCardName.value
+  const linkInputValue = inputCardLink.value
+
+  renderCard(nameInputValue, linkInputValue)
+
   closeAddCardPopup(popupAddCard);
 }
 popupAddCard.addEventListener("submit", submitAddCardForm);
@@ -212,68 +222,3 @@ function closeAddCardPopup(popupAddCard) {
 addCardCloseButton.addEventListener("click", () =>
   closeAddCardPopup(popupAddCard)
 );
-
-// // AddCard - форма добавления карточки =================================== //
-
-// // открытие формы AddCard
-// function openAddCardPopup(popupAddCard) {
-//   openPopup(popupAddCard);
-// }
-// addCardButton.addEventListener("click", () => openPopup(popupAddCard));
-
-// // отправка и передача данных из формы AddCard
-// function submitAddCardForm(evt) {
-//   evt.preventDefault();
-//   const name = inputCardName.value;
-//   const link = inputCardLink.value;
-
-//   renderCard(name, link);
-// };
-//   closePopup(popupAddCard);
-
-// popupAddCard.addEventListener("submit", submitAddCardForm);
-
-// // очистка полей ввода данных
-// inputCardLink.value = "";
-// inputCardName.value = ""
-
-// function createCard(name, link) {
-//   newCard.querySelector(".card__name").textContent = name;
-//   newCard.querySelector(".card__image").src = link;
-//   newCard.querySelector(".card__image").alt = name;
-
-//   return newCard;
-// }
-
-// function renderCard(name, link) {
-//   newCard = createCard(name, link);
-// }
-
-// // добавление новой карточки на страницу
-// cardList.prepend(newCard);
-
-// // Открытие фото из карточки
-// cardListItem.querySelector(".card__image").addEventListener("click", () => {
-//   openPopup(popupImageOpen);
-//   popupImageTitle.textContent = cardListItem.querySelector(".card__name").textContent;
-//   popupImage.src = cardListItem.querySelector(".card__image").src;
-// });
-// popupImageCloseButton.addEventListener("click", () => closePopup(popupImageOpen));
-
-// // кнопка удаление карточки
-//   const deleteButton = cardListItem.querySelector(".card__button_delete");
-//   deleteButton.addEventListener("click", () => {
-//     cardListItem.remove();
-//   });
-
-//   // кнопка like карточки
-//   const likeButton = cardListItem.querySelector(".card__button_like");
-//   likeButton.addEventListener("click", function (evt) {
-//     evt.target.classList.toggle("card__button_like_active");
-//   });
-
-// // ззакрытие формы AddCard по кнопке addCardCloseButton
-// // function closeAddCardPopup(popupAddCard) {
-// //   popupAddCard.classList.remove("popup_opened");
-// // }
-// addCardCloseButton.addEventListener("click", () => closePopup(popupAddCard));
