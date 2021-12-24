@@ -13,25 +13,25 @@ const profileEditCloseButton = document.querySelector(
 
 const formElement = document.querySelector(".form");
 const formInput = formElement.querySelector(".form__input");
-const formError = formElement.querySelector(`.${formInput.id}-error`);
+// const formError = formElement.querySelector(`.${formInput.id}-error`);  // УДАЛИТЬ
 
 const cardList = document.querySelector(".card-list");
 const cardTemplate = document.querySelector("#card-template");
 const cardListItem = cardTemplate.querySelector(".card");
-const cardName = cardTemplate.querySelector(".card__name");
-const cardImage = cardTemplate.querySelector(".card__image");
+// const cardName = cardTemplate.querySelector(".card__name");            // УДАЛИТЬ
+// const cardImage = cardTemplate.querySelector(".card__image");          // УДАЛИТЬ
 
 const popupAddCard = document.querySelector(".popup.add-card");
 const addCardButton = document.querySelector(".profile__add-button");
-const formAddCard = document.querySelector("[name='form-add-card']");
+// const formAddCard = document.querySelector("[name='form-add-card']");  // УДАЛИТЬ
 const inputCardName = document.querySelector("[name='card_title']");
 const inputCardLink = document.querySelector("[name='card_link']");
 const addCardCloseButton = document.querySelector(
   ".popup.add-card .add-card__close-button"
 );
-const addCardSubmitButton = document.querySelector(
-  ".popup.add-card .form__submit-button"
-);
+// const addCardSubmitButton = document.querySelector(                    // УДАЛИТЬ
+//   ".popup.add-card .form__submit-button"
+// );
 
 const popupImageOpen = document.querySelector(".popup.popup-image");
 const popupImage = document.querySelector(".popup-image__image");
@@ -70,9 +70,7 @@ const initialCards = [
 // Переборр массива - вставка начальных карточек - создание новой карточки ========================= //
 
 const createCard = (cardInfo) => {
-  const cardListItem = cardTemplate.content
-    .querySelector(".card")
-    .cloneNode(true);
+  const cardListItem = cardTemplate.content.querySelector(".card").cloneNode(true);
   cardListItem.querySelector(".card__name").textContent = cardInfo.name;
   cardListItem.querySelector(".card__image").alt = cardInfo.name;
   cardListItem.querySelector(".card__image").src = cardInfo.link;
@@ -122,13 +120,13 @@ function closePopup(popup) {
 
 // ProfileEdit - форма редактирования профиля =================================== //
 
-// открытие формы ProfileEdit
-function openProfileEditPopup(popupProfileEdit) {
-  openPopup(popupProfileEdit);
-}
+// открытие формы ProfileEdit                                               // УДАЛИТЬ
+// function openProfileEditPopup(popupProfileEdit) {
+//   openPopup(popupProfileEdit);
+// }
 
 profileEditButton.addEventListener("click", () => {
-  openPopup(popupProfileEdit);
+  // openPopup(popupProfileEdit);                                           // УДАЛИТЬ
   openProfileEditForm();
 });
 
@@ -160,7 +158,7 @@ profileEditCloseButton.addEventListener("click", () =>
 
 // открытие формы AddCard
 function openAddCardPopup(popupAddCard) {
-  popupAddCard.classList.add("popup_opened");
+  openPopup(popupAddCard);
 }
 addCardButton.addEventListener("click", () => openAddCardPopup(popupAddCard));
 
@@ -180,7 +178,7 @@ popupAddCard.addEventListener("submit", submitAddCardForm);
 // Добавление новой карточки
 function addCard(evt) {
   evt.preventDefault();
-  const cardListItem = cardTemplate.content.querySelector(".card").cloneNode(true);
+  // const cardListItem = cardTemplate.content.querySelector(".card").cloneNode(true);
   cardListItem.querySelector(".card__image").src = inputCardLink.value;
   cardListItem.querySelector(".card__name").textContent = inputCardName.value;
 
@@ -194,8 +192,7 @@ function addCard(evt) {
   // Открытие фото из карточки
   cardListItem.querySelector(".card__image").addEventListener("click", () => {
     popupImageOpen.classList.add("popup_opened");
-    popupImageTitle.textContent =
-      cardListItem.querySelector(".card__name").textContent;
+    popupImageTitle.textContent = cardListItem.querySelector(".card__name").textContent;
     popupImage.src = cardListItem.querySelector(".card__image").src;
   });
   popupImageCloseButton.addEventListener("click", () => {
@@ -217,7 +214,7 @@ function addCard(evt) {
 
 // ззакрытие формы AddCard по кнопке addCardCloseButton
 function closeAddCardPopup(popupAddCard) {
-  popupAddCard.classList.remove("popup_opened");
+  closePopup(popupAddCard);
 }
 addCardCloseButton.addEventListener("click", () =>
   closeAddCardPopup(popupAddCard)
