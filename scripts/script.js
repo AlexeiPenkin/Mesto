@@ -1,3 +1,4 @@
+const popup = document.querySelector(".popup");
 const popupProfileEdit = document.querySelector(".popup.edit-profile");
 const inputName = document.querySelector("[name='form_name']");
 const inputJob = document.querySelector("[name='form_job']");
@@ -26,12 +27,16 @@ const popupImageCloseButton = document.querySelector(".popup-image__close-button
 
 const initialCards = [
   {
-    name: "Сейдозеро, Мурманская область",
-    link: "https://images.unsplash.com/photo-1624719634789-d30a375d4d6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    name: "Архангельская область",
+    link: "https://images.unsplash.com/photo-1446506123797-f3e3eb4c092d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
+  },
+    {
+    name: "Владивосток",
+    link: "https://images.unsplash.com/photo-1610897592260-e61cdb60f6a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1610&q=80",
   },
   {
     name: "Красноярский край",
-    link: "https://images.unsplash.com/photo-1554481644-50d52b6fe742?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+    link: "https://images.unsplash.com/photo-1598007827524-ed6b42eb748e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   },
   {
     name: "Казань",
@@ -43,11 +48,7 @@ const initialCards = [
   },
   {
     name: "Сочи",
-    link: "https://images.unsplash.com/photo-1605551440214-fd53c8ac9adb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-  },
-  {
-    name: "Владивосток",
-    link: "https://images.unsplash.com/photo-1591254252635-3696f89b972f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80",
+    link: "https://images.unsplash.com/photo-1576096945991-8f93bc88e924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1727&q=80",
   },
 ];
 
@@ -158,3 +159,70 @@ function closeAddCardPopup(popupAddCard) {
 addCardCloseButton.addEventListener("click", () =>
   closeAddCardPopup(popupAddCard)
 );
+
+// Валидация ============================================================= //
+
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add('form__input_type_error');
+  errorElement.classList.add('form__input-error_active');
+  errorElement.textContent = errorMessage;
+};
+
+const hideInputError = (formElement, inputElement) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove('form__input_type_error');
+  errorElement.classList.remove('form__input-error_active');
+  errorElement.textContent = '';
+};
+
+const checkInputValidity = (formElement, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+  setEventListeners(formElement); 
+};
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll('.form__input'));
+  const buttonElement = formElement.querySelector('.form__submit-button');
+  toggleButtonState(inputList, buttonElement);
+  
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function () {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll('.form'));
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+    });
+  const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
+  fieldsetList.forEach((fieldSet) => {
+    setEventListeners(fieldSet); 
+    })
+  });
+};
+
+enableValidation();
+
+function hasInvalidInput (inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+}
+
+function toggleButtonState (inputList, buttonElement) {
+  if (hasInvalidInput(inputList)) {
+  buttonElement.classList.add('form__submit-button_disabled');
+} else {
+  buttonElement.classList.remove('form__submit-button_disabled');
+  }
+}
