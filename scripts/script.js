@@ -1,4 +1,3 @@
-const popup = document.querySelector(".popup");
 const popupProfileEdit = document.querySelector(".popup.edit-profile");
 const inputName = document.querySelector("[name='form_name']");
 const inputJob = document.querySelector("[name='form_job']");
@@ -30,7 +29,7 @@ const initialCards = [
     name: "Архангельская область",
     link: "https://images.unsplash.com/photo-1446506123797-f3e3eb4c092d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
   },
-    {
+  {
     name: "Владивосток",
     link: "https://images.unsplash.com/photo-1610897592260-e61cdb60f6a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1610&q=80",
   },
@@ -55,10 +54,15 @@ const initialCards = [
 // Переборр массива - вставка начальных карточек - создание новой карточки //
 
 const createCard = (cardInfo) => {
-  const cardListItem = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardListItem = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
   cardListItem.querySelector(".card__name").textContent = cardInfo.name;
   cardListItem.querySelector(".card__image").alt = cardInfo.name;
   cardListItem.querySelector(".card__image").src = cardInfo.link;
+
+  inputCardLink.value = "";
+  inputCardName.value = "";
 
   cardListItem.querySelector(".card__image").addEventListener("click", () => {
     openPopup(popupImageOpen);
@@ -83,10 +87,10 @@ const createCard = (cardInfo) => {
 };
 
 const renderCard = (name, link) => {
-  const newCard = createCard({name, link})
+  const newCard = createCard({ name, link });
 
   cardList.prepend(newCard);
-}
+};
 
 const cards = initialCards.map(createCard);
 cardList.prepend(...cards);
@@ -101,13 +105,26 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
 
-// ProfileEdit - форма редактирования профиля //
-
-profileEditButton.addEventListener("click", () => {
-  openProfileEditForm();
+// Функция закрытия модального окна нажатием на Esc //
+document.addEventListener("keydown", (e) => {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (e.key === "Escape") {
+    closePopup(popupOpened);
+  }
 });
 
-formProfileEdit.reset();
+// Функция закрытия модального окна нажатием на Overlay //
+document.addEventListener("mousedown", (e) => {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (e.target === popupOpened) {
+    closePopup(popupOpened);
+  }
+});
+
+// ProfileEdit - форма редактирования профиля //
+
+// открытие формы AddCard
+profileEditButton.addEventListener("click", () => openProfileEditForm());
 
 // передача значений в форму ProfileEdit
 function openProfileEditForm() {
@@ -134,46 +151,44 @@ profileEditCloseButton.addEventListener("click", () =>
 // AddCard - форма добавления карточки //
 
 // открытие формы AddCard
-function openAddCardPopup(popupAddCard) {
+addCardButton.addEventListener("click", () => openAddCardForm());
+
+// передача значений в форму AddCard
+function openAddCardForm() {
+  inputName.value = "";
+  inputJob.value = "";
   openPopup(popupAddCard);
 }
-addCardButton.addEventListener("click", () => openAddCardPopup(popupAddCard));
 
-// отправка и передача данных из формы AddCard
+// отправка формы AddCard
 function submitAddCardForm(evt) {
   evt.preventDefault();
+  const nameInputValue = inputCardName.value;
+  const linkInputValue = inputCardLink.value;
 
-  const nameInputValue = inputCardName.value
-  const linkInputValue = inputCardLink.value
+  renderCard(nameInputValue, linkInputValue);
 
-  renderCard(nameInputValue, linkInputValue)
-
-  closeAddCardPopup(popupAddCard);
+  closePopup(popupAddCard);
 }
 popupAddCard.addEventListener("submit", submitAddCardForm);
 
 // ззакрытие формы AddCard по кнопке addCardCloseButton
-function closeAddCardPopup(popupAddCard) {
-  closePopup(popupAddCard);
-}
-addCardCloseButton.addEventListener("click", () =>
-  closeAddCardPopup(popupAddCard)
-);
+addCardCloseButton.addEventListener("click", () => closePopup(popupAddCard));
 
 // Валидация ============================================================= //
 
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add('form__input_type_error');
-  errorElement.classList.add('form__input-error_active');
+  inputElement.classList.add("form__input_type_error");
+  errorElement.classList.add("form__input-error_active");
   errorElement.textContent = errorMessage;
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.remove('form__input_type_error');
-  errorElement.classList.remove('form__input-error_active');
-  errorElement.textContent = '';
+  inputElement.classList.remove("form__input_type_error");
+  errorElement.classList.remove("form__input-error_active");
+  errorElement.textContent = "";
 };
 
 const checkInputValidity = (formElement, inputElement) => {
@@ -182,16 +197,16 @@ const checkInputValidity = (formElement, inputElement) => {
   } else {
     hideInputError(formElement, inputElement);
   }
-  setEventListeners(formElement); 
+  setEventListeners(formElement);
 };
 
 const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll('.form__input'));
-  const buttonElement = formElement.querySelector('.form__submit-button');
+  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+  const buttonElement = formElement.querySelector(".form__submit-button");
   toggleButtonState(inputList, buttonElement);
-  
+
   inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', function () {
+    inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement);
       toggleButtonState(inputList, buttonElement);
     });
@@ -199,30 +214,30 @@ const setEventListeners = (formElement) => {
 };
 
 const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll('.form'));
+  const formList = Array.from(document.querySelectorAll(".form"));
   formList.forEach((formElement) => {
-    formElement.addEventListener('submit', function (evt) {
+    formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-  const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
-  fieldsetList.forEach((fieldSet) => {
-    setEventListeners(fieldSet); 
-    })
+    const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
+    fieldsetList.forEach((fieldSet) => {
+      setEventListeners(fieldSet);
+    });
   });
 };
 
 enableValidation();
 
-function hasInvalidInput (inputList) {
+function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 }
 
-function toggleButtonState (inputList, buttonElement) {
+function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
-  buttonElement.classList.add('form__submit-button_disabled');
-} else {
-  buttonElement.classList.remove('form__submit-button_disabled');
+    buttonElement.classList.add("form__submit-button_disabled");
+  } else {
+    buttonElement.classList.remove("form__submit-button_disabled");
   }
 }

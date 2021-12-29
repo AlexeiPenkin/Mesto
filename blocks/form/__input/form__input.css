@@ -8,8 +8,8 @@
   background-color: transparent;
   margin: 0;
   padding: 0;
-  padding-bottom: 13.3px;
-  border-bottom: 1px solid #C4C4C4;
+  margin-top: 13px;
+  border-bottom: 1px solid #c4c4c4;
   transition: 0.3s;
 }
 
@@ -18,19 +18,9 @@
 }
 
 .form__input:focus {
-  border-bottom-color: #007DFF;
+  border-bottom-color: #007dff;
 }
-
-/*.form__input:valid {
-  border-bottom: 1px solid green;
-}*/
 
 .form__input_type_error {
   border-bottom-color: red;
-}
-
-@media screen and (max-width: 617px) {
-  .form__input {
-      margin-bottom: 28px;
-  }
 }
