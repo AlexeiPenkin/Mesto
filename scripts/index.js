@@ -12,7 +12,6 @@ const profileEditCloseButton = document.querySelector(".popup.edit-profile .popu
 const formElement = document.querySelector(".form");
 const inputElement = formElement.querySelector(".form__input");
 const submitButton = formElement.querySelector(".form__submit-button");
-// const submitEditButton = document.querySelector(".form__submit_type_edit");
 const submitPlaceButton = document.querySelector(".form__submit_type_place");
 
 const cardList = document.querySelector(".card-list");
@@ -104,7 +103,6 @@ popups.forEach((popup) => {
 // открытие формы ProfileEdit
 profileEditButton.addEventListener("click", () => {
   openProfileEditForm();
-  // disableSubmitButton(submitEditButton);
 });
 
 // передача значений в форму ProfileEdit
