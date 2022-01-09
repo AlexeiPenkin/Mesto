@@ -40,6 +40,7 @@ const createCard = (cardInfo) => {
     openPopup(popupImageOpen);
     popupImageTitle.textContent = cardInfo.name;
     popupImage.src = cardInfo.link;
+    popupImage.alt = cardInfo.name;
   });
 
   const deleteButton = cardListItem.querySelector(".card__button_delete");
