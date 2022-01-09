@@ -33,7 +33,6 @@
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__set/form__set.css);
 @import url(../blocks/form/__submit-button/form__submit-button.css);
-@import url(../blocks/form/__submit-button/_disabled/form__submit-button_disabled.css);
 @import url(../blocks/form/__title/form__title.css);
 
 @import url(../blocks/popup/popup.css);  /* блок "popup" */
@@ -42,7 +41,6 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 
 @import url(../blocks/popup-image/popup-image.css);  /* блок "popup-image" */
-@import url(../blocks/popup-image/__close-button/popup-image__close-button.css);
 @import url(../blocks/popup-image/__container/popup-image__container.css);
 @import url(../blocks/popup-image/__content/popup-image__content.css);
 @import url(../blocks/popup-image/__figure/popup-image__figure.css);

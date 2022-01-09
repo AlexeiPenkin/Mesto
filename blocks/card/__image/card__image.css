@@ -7,3 +7,14 @@
   border-radius: 10px 10px 0px 0px;
   cursor: pointer;
 }
+
+/* .card__image::after {
+  background: #000;
+  opacity: 0.3;
+  z-index: -1;
+  transition: 0.5s linear;
+} */
+
+.card__image:hover {
+  filter: brightness(0.5);
+}
