@@ -30,8 +30,6 @@ const initialCards = [
 const cardList = document.querySelector(".card-list");
 const cardTemplate = document.querySelector("#card-template");
 const cardListItem = document.querySelector(".card");
-const cardDeleteButton = document.querySelector(".card__button_delete");
-const cardLikeButton = document.querySelector(".card__button_like");
 const popup = document.querySelector('.popup');
 const popupImageOpen = document.querySelector(".popup.popup-image");
 const popupImage = document.querySelector(".popup-image__image");
@@ -76,9 +74,9 @@ export class Card {
         this._popupImageCLose();
       });
 
-      // cardDeleteButton.addEventListener("click", () => {
-      //   this._cardDelete();
-      // });
+      cardDeleteButton.addEventListener("click", () => {
+        this._cardDelete();
+      });
 
       // cardLikeButton.addEventListener("click", () => {
       //   this._cardLike();
@@ -89,37 +87,34 @@ export class Card {
       popupImageTitle.textContent = this._name;
       popupImage.src = this._link;
       popupImage.alt = ('Фотография' + ': ' + this._name);
-      popupImageOpen.classList.add('popup_opened');
+      openPopup(popupImageOpen);
     }
 
     _popupImageCLose() {
-      popupImageTitle.textContent = '';
-      popupImage.src = '';
-      popupImage.alt = '';
-      popupImageOpen.classList.remove('popup_opened');
+      // popupImageTitle.textContent = '';
+      // popupImage.src = '';
+      // popupImage.alt = '';
+      closePopup(popupImageOpen);
     }
 
-    // _cardDelete() {
-    //   cardDeleteButton.addEventListener("click", () => {
-    //     this._element.remove();
-    //   });
-    // }
-
+    _cardDelete() {
+      const cardDeleteButton = Card.querySelector(".card__button_delete");
+        cardDeleteButton.addEventListener("click", () => {
+          cardListItem.remove();
+      });
+    }
+    
     // _cardLike(evt) {
-    //   cardLikeButton.addEventListener("click", (evt) => {
-    //     evt.target.classList.toggle("card__button_like_active");
+    //   const cardLikeButton = Card.querySelector(".card__button_like");
+    //     cardLikeButton.addEventListener("click", (evt) => {
+    //       evt.target.classList.toggle("card__button_like_active");
     //   });
     // }
 }
+
 initialCards.forEach((item) => {
   const card = new Card(item, '#card-template');
   const cardListItem = card.createCard();
-  // Добавляем в DOM
+
   cardList.append(cardListItem);
 });
-
-// const renderCard = (name, link) => {
-//   const newCard = createCard({ name, link, alt });
-
-//   cardList.prepend(newCard);
-// };
