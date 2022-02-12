@@ -6,7 +6,6 @@ export const formValidation = ({
   inputErrorClass: ".form__input_type_error",
   errorClass: ".form__input-error_active",
 });
-
 export const initialCards = [
   {
     name: "Архангельская область",
@@ -33,3 +32,30 @@ export const initialCards = [
     link: "https://images.unsplash.com/photo-1576096945991-8f93bc88e924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1727&q=80",
   },
 ];
+export const popupImage = document.querySelector(".popup-image__image");
+export const popupImageOpen = document.querySelector(".popup.popup-image");
+export const popupImageTitle = document.querySelector(".popup-image__title");
+export const popupProfileEdit = document.querySelector(".popup.edit-profile");
+export const inputName = document.querySelector("[name='name']");
+export const inputJob = document.querySelector("[name='job']");
+export const profileName = document.querySelector(".profile__name");
+export const profileJob = document.querySelector(".profile__job");
+export const profileEditForm = popupProfileEdit.querySelector("[name='form-edit-profile']");
+export const profileEditButton = document.querySelector(".profile__edit-button");
+export const profileEditCloseButton = document.querySelector(".popup.edit-profile .popup__close-button");
+export const formElement = document.querySelector(".form");
+export const inputElement = formElement.querySelector(".form__input");
+export const submitButton = formElement.querySelector(".form__submit-button");
+export const submitPlaceButton = document.querySelector(".form__submit_type_place");
+export const cardList = document.querySelector(".card-list");
+export const cardTemplateSelector = "#card-template"
+// export const cardTemplate = document.querySelector("#card-template");                                            
+export const cardListItem = document.querySelector(".card");
+export const popupAddCard = document.querySelector(".popup.add-card");
+export const addCardButton = document.querySelector(".profile__add-button");
+export const addCardForm = document.querySelector("[name='form-add-card']");
+export const inputCardName = document.querySelector("[name='title']");
+export const inputCardLink = document.querySelector("[name='link']");
+export const addCardCloseButton = document.querySelector(".popup.add-card .popup__close-button");
+export const popup = document.querySelector('.popup');
+export const popupImageCloseButton = document.querySelector(".popup.popup-image .popup__close-button");
