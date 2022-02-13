@@ -1,23 +1,23 @@
-// import { Card } from './Card_1.js'
 import { Card } from './Card.js'
+
 import { FormValidator } from './FormValidator.js'
-import { openPopup } from './utils.js'
+
 import { 
-  formValidation, 
-  initialCards, 
-  popupImage, 
-  popupImageOpen, 
-  popupImageTitle,
-} from './constants.js'
+  openPopup, 
+  closePopup, 
+  closeByEscape 
+} from './utils.js'
+
 import {
   addCardButton,
   addCardCloseButton,
   addCardForm,
   cardList,
   cardListItem,
-  // cardTemplate,
   cardTemplateSelector,
   formElement,
+  formValidation, 
+  initialCards, 
   inputCardLink,
   inputCardName,
   inputElement,
@@ -25,7 +25,10 @@ import {
   inputName,
   popup,
   popupAddCard,
+  popupImage, 
   popupImageCloseButton,
+  popupImageOpen, 
+  popupImageTitle,
   popupProfileEdit,
   profileEditButton,
   profileEditCloseButton,
@@ -57,14 +60,6 @@ const renderCard = (data) => {
 initialCards.forEach((data) => {
   renderCard(data, cardList)
 })
-
-// Функция закрытия модального окна нажатием на Esc //
-export function closeByEscape(evt) {
-  if (evt.key === "Escape") {
-    const openedPopup = document.querySelector(".popup_opened")
-    closePopup(openedPopup);
-  }
-}
 
 // Функция закрытия модального окна нажатием на Overlay + Close Button //
 const popups = document.querySelectorAll('.popup');
@@ -108,7 +103,7 @@ profileEditForm.addEventListener("submit", submitProfileEditForm);
 // открытие формы AddCard
 addCardButton.addEventListener("click", () => {
   openPopup(popupAddCard);
-  disableSubmitButton(submitPlaceButton);
+  // disableSubmitButton(submitPlaceButton);
 });
 
 // отправка формы AddCard
@@ -124,7 +119,7 @@ function submitAddCardForm(evt) {
 }
 popupAddCard.addEventListener("submit", submitAddCardForm);
 
-function disableSubmitButton (submitButton) {
-  submitButton.setAttribute("disabled", true);
-  submitButton.classList.add("form__submit-button_disabled");
-}
+// function disableSubmitButton (submitButton) {
+//   submitButton.setAttribute("disabled", true);
+//   submitButton.classList.add("form__submit-button_disabled");
+// }
