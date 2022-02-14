@@ -1,4 +1,3 @@
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ рабочий вариант (08 02 22) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 import { openPopup } from "./utils.js";
 import { popupImageOpen, popupImage, popupImageTitle } from "./constants.js";
 
@@ -10,10 +9,9 @@ export class Card {
     this._cardSelector = cardSelector;
   }
 
+  // клонируем шаблон
   _getTemplate() {
     const cardListItem = document.querySelector(this._cardSelector).content.cloneNode(true);
-    // const cardDeleteButton = cardListItem.querySelector('.card__button_delete');
-    // const cardLikeButton = cardListItem.querySelector('.card__button_like');
 
     return cardListItem;
   }

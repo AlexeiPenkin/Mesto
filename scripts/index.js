@@ -2,41 +2,25 @@ import { Card } from './Card.js'
 
 import { FormValidator } from './FormValidator.js'
 
-import { 
-  openPopup, 
-  closePopup, 
-  closeByEscape 
-} from './utils.js'
+import { openPopup, closePopup } from './utils.js'
 
 import {
   addCardButton,
-  addCardCloseButton,
   addCardForm,
   cardList,
-  cardListItem,
   cardTemplateSelector,
-  formElement,
   formValidation, 
   initialCards, 
   inputCardLink,
   inputCardName,
-  inputElement,
   inputJob,
   inputName,
-  popup,
   popupAddCard,
-  popupImage, 
-  popupImageCloseButton,
-  popupImageOpen, 
-  popupImageTitle,
   popupProfileEdit,
   profileEditButton,
-  profileEditCloseButton,
   profileEditForm,
   profileJob,
-  profileName,
-  submitButton,
-  submitPlaceButton,
+  profileName
 } from './constants.js'
 
 //валидация формы редактирования профиля
@@ -53,9 +37,6 @@ const renderCard = (data) => {
 
   cardList.prepend(cardListItem);
 };
-
-// const cards = initialCards.map(createCard);
-// cardList.prepend(...cards);
 
 initialCards.forEach((data) => {
   renderCard(data, cardList)
@@ -103,7 +84,6 @@ profileEditForm.addEventListener("submit", submitProfileEditForm);
 // открытие формы AddCard
 addCardButton.addEventListener("click", () => {
   openPopup(popupAddCard);
-  // disableSubmitButton(submitPlaceButton);
 });
 
 // отправка формы AddCard
@@ -111,15 +91,10 @@ function submitAddCardForm(evt) {
   evt.preventDefault();
   const nameInputValue = inputCardName.value;
   const linkInputValue = inputCardLink.value;
-  renderCard(nameInputValue, linkInputValue);
+  renderCard({name: nameInputValue, link: linkInputValue});
   closePopup(popupAddCard);
 
   inputCardLink.value = "";
   inputCardName.value = "";
 }
 popupAddCard.addEventListener("submit", submitAddCardForm);
-
-// function disableSubmitButton (submitButton) {
-//   submitButton.setAttribute("disabled", true);
-//   submitButton.classList.add("form__submit-button_disabled");
-// }
