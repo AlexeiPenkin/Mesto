@@ -12,8 +12,8 @@ export class Card {
 
   _getTemplate() {
     const cardListItem = document.querySelector(this._cardSelector).content.cloneNode(true);
-    const cardDeleteButton = cardListItem.querySelector('.card__button_delete');
-    const cardLikeButton = cardListItem.querySelector('.card__button_like');
+    // const cardDeleteButton = cardListItem.querySelector('.card__button_delete');
+    // const cardLikeButton = cardListItem.querySelector('.card__button_like');
 
     return cardListItem;
   }
@@ -24,9 +24,9 @@ export class Card {
     this._cardImage = this._element.querySelector('.card__image');
     
     // передаем данные в создаваемую карточку
-    this._element.src = this._link;
-    this._element.textContent = this._name;
-    this._element.alt = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._element.querySelector('.card__name').textContent = this._name;
 
     this._setEventListeners();
 
@@ -37,7 +37,7 @@ export class Card {
     _setEventListeners() {
       // открываем фото из карточки
       this._element.querySelector('.card__image').addEventListener('click', () => {
-        this._popupImageOpen(popupImageOpen);
+        this._popupImageOpen();
       });
       // удаляем карточку
       this._element.querySelector('.card__button_delete').addEventListener('click', (evt) => {
@@ -50,16 +50,12 @@ export class Card {
     }
 
     // открываем фото из карточки
-    _popupImageOpen(popupImageOpen) {
+    _popupImageOpen() {
       popupImageTitle.textContent = this._name;
       popupImage.src = this._link;
       popupImage.alt = ('Фотография' + ': ' + this._name);
       openPopup(popupImageOpen);
     }
-    // закрываем фото
-    // _popupImageCLose() {
-    //   closePopup(popupImageOpen);
-    // }
     // удаляем карточку
     _deleteCard(evt) {
       evt.target.closest('.card').remove();
@@ -67,5 +63,5 @@ export class Card {
     // обрабатываем лайк
     _likeCard(evt) {
       evt.target.classList.toggle('card__button_like_active');
-  }
+    }
 }
