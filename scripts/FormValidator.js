@@ -39,6 +39,14 @@ export class FormValidator {
     });
   };
 
+  resetValidation() {
+    this._toggleButtonState();
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+  }
+
   _disableSubmitButton = () => {
     const { inactiveButtonClass } = this._settings
     this._buttonElement.classList.add(inactiveButtonClass);

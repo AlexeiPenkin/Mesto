@@ -25,10 +25,12 @@ import {
 
 //валидация формы редактирования профиля
 const editFormValidator = new FormValidator(formValidation, profileEditForm);
+editFormValidator.resetValidation();
 editFormValidator.enableValidation();
 
 //валидация формы добавления новой карточки
 const addCardFormValidator = new FormValidator(formValidation, addCardForm);
+addCardFormValidator.resetValidation();
 addCardFormValidator.enableValidation();
 
 const renderCard = (data) => {
@@ -58,17 +60,16 @@ popups.forEach((popup) => {
 
 // ProfileEdit - форма редактирования профиля ================== //
 
-// открытие формы ProfileEdit
-profileEditButton.addEventListener("click", () => {
-  openProfileEditForm();
-});
-
-// передача значений в форму ProfileEdit
+// открываем форму ProfileEdit
 function openProfileEditForm() {
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
   openPopup(popupProfileEdit);
+  editFormValidator.resetValidation();
 }
+profileEditButton.addEventListener("click", () => {
+  openProfileEditForm();
+});
 
 // отправка формы ProfileEdit
 function submitProfileEditForm(evt) {
@@ -79,12 +80,22 @@ function submitProfileEditForm(evt) {
 }
 profileEditForm.addEventListener("submit", submitProfileEditForm);
 
+
 // AddCard - форма добавления карточки ======================== //
 
-// открытие формы AddCard
-addCardButton.addEventListener("click", () => {
+// открываем форму AddCard
+function openAddCardForm() {
   openPopup(popupAddCard);
+  clearValueCard();
+  addCardFormValidator.resetValidation();
+}
+addCardButton.addEventListener("click", () => {
+  openAddCardForm();
 });
+
+function clearValueCard() {
+  addCardForm.reset();
+};
 
 // отправка формы AddCard
 function submitAddCardForm(evt) {
@@ -93,8 +104,5 @@ function submitAddCardForm(evt) {
   const linkInputValue = inputCardLink.value;
   renderCard({name: nameInputValue, link: linkInputValue});
   closePopup(popupAddCard);
-
-  inputCardLink.value = "";
-  inputCardName.value = "";
 }
 popupAddCard.addEventListener("submit", submitAddCardForm);
