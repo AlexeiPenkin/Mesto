@@ -32,32 +32,38 @@ export const initialCards = [
     link: "https://sun9-12.userapi.com/impf/c851220/v851220531/104efb/ScYk7ynMvXU.jpg?size=1280x874&quality=96&sign=bab021682a9afacd0853d86a143a39ef&type=album",
   },
 ];
-export const addCardButton = document.querySelector(".profile__add-button");
-export const addCardCloseButton = document.querySelector(".popup.add-card .popup__close-button");
-export const addCardForm = document.querySelector("[name='form-add-card']");
-export const cardDeleteButton = document.querySelector('.card__button_delete');
-export const cardLikeButton = document.querySelector('.card__button_like');
-export const cardList = document.querySelector(".card-list");
-export const cardListItem = document.querySelector(".card");
-export const cardTemplate = document.querySelector("#card-template");
-export const cardTemplateSelector = "#card-template"
-export const formElement = document.querySelector(".form");
-export const inputCardLink = document.querySelector("[name='link']");
-export const inputCardName = document.querySelector("[name='title']");
-export const inputElement = formElement.querySelector(".form__input");
-export const inputJob = document.querySelector("[name='job']");
-export const inputName = document.querySelector("[name='name']");
-export const popup = document.querySelector('.popup');
-export const popupAddCard = document.querySelector(".popup.add-card");
-export const popupImage = document.querySelector(".popup-image__image");
-export const popupImageCloseButton = document.querySelector(".popup.popup-image .popup__close-button");
-export const popupImageOpen = document.querySelector(".popup.popup-image");
-export const popupImageTitle = document.querySelector(".popup-image__title");
-export const popupProfileEdit = document.querySelector(".popup.edit-profile");
+// export const addCardButton = document.querySelector(".profile__add-button");
+// export const addCardCloseButton = document.querySelector(".popup.add-card .popup__close-button");
+// export const addCardForm = document.querySelector("[name='form-add-card']");
+// export const cardDeleteButton = document.querySelector(".card__button_delete");
+// export const cardLikeButton = document.querySelector(".card__button_like");
+// export const cardList = document.querySelector(".card-list");
+// export const cardListItem = document.querySelector(".card");
+// export const cardTemplate = document.querySelector("#card-template");
+// export const cardTemplateSelector = "#card-template"
+// export const formElement = document.querySelector(".form");
+// export const inputCardLink = document.querySelector("[name='link']");
+// export const inputCardName = document.querySelector("[name='title']");
+// export const inputElement = formElement.querySelector(".form__input");
+// export const inputJob = document.querySelector("[name='job']");
+// export const inputName = document.querySelector("[name='name']");
+// export const popup = document.querySelector(".popup");
+// export const popupAddCard = document.querySelector(".popup.add-card");
+// export const popupImage = document.querySelector(".popup-image__image");
+// export const popupImageCloseButton = document.querySelector(".popup.popup-image .popup__close-button");
+// export const popupImageOpen = document.querySelector(".popup.popup-image");
+// export const popupImageTitle = document.querySelector(".popup-image__title");
+// export const popupProfileEdit = document.querySelector(".popup.edit-profile");
+// export const profileEditButton = document.querySelector(".profile__edit-button");
+// export const profileEditCloseButton = document.querySelector(".popup.edit-profile .popup__close-button");
+// export const profileEditForm = popupProfileEdit.querySelector("[name='form-edit-profile']");
+// export const profileJob = document.querySelector(".profile__job");
+// export const profileName = document.querySelector(".profile__name");
+// export const submitButton = formElement.querySelector(".form__submit-button");
+// export const submitPlaceButton = document.querySelector(".form__submit_type_place");
+
+
 export const profileEditButton = document.querySelector(".profile__edit-button");
-export const profileEditCloseButton = document.querySelector(".popup.edit-profile .popup__close-button");
-export const profileEditForm = popupProfileEdit.querySelector("[name='form-edit-profile']");
-export const profileJob = document.querySelector(".profile__job");
-export const profileName = document.querySelector(".profile__name");
-export const submitButton = formElement.querySelector(".form__submit-button");
-export const submitPlaceButton = document.querySelector(".form__submit_type_place");
+export const popupImageOpen = document.querySelector(".popup.popup-image");
+export const popupImage = document.querySelector(".popup-image__image");
+export const popupImageTitle = document.querySelector(".popup-image__title");

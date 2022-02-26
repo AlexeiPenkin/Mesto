@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   constructor(settings, form) {
     this.form = form
     this._settings = settings
@@ -21,7 +21,7 @@ export class FormValidator {
 
     const errorElement = this.form.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(inputErrorClass);
-    errorElement.textContent = "";
+    errorElement.textContent = '';
     errorElement.classList.remove(errorClass);
   };
   
@@ -70,7 +70,7 @@ export class FormValidator {
   
   _setEventListeners() {
     this._inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
+      inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement);
         this._toggleButtonState();
       });
@@ -78,7 +78,7 @@ export class FormValidator {
   };
 
   enableValidation() {
-    this.form.addEventListener("submit", (evt) => {
+    this.form.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
 
