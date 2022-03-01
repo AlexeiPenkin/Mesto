@@ -31,4 +31,4 @@ JavaScript
 
 
 # Ссылка на GitHub
-https://alexeipenkin.github.io/Mesto/index.html
+https://github.com/AlexeiPenkin/Mesto
