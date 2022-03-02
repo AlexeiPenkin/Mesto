@@ -3,9 +3,7 @@ import {
   initialCards, 
   profileEditButton
 } from '../utils/constants.js'
-
 import '../pages/index.css';
-
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -33,7 +31,10 @@ profileEditValidator.enableValidation();
 
 // передаем user info в форму ProfileEdit
 const openProfileEditHandler = () => {
-  const dataUser = userInfo.getUserInfo()
+  const data = userInfo.getUserInfo()
+  for (let key in data) {
+    popupProfileEditForm.form.elements[key].value = data[key]
+  }
   profileEditValidator.resetValidation();
   popupProfileEditForm.open()
 }
@@ -41,14 +42,14 @@ const openProfileEditHandler = () => {
 profileEditButton.addEventListener('click', openProfileEditHandler)
 
 // Открытие preview фото из зкарточки ================================================== //
-const popupImageOpen = new PopupWithImage('.popup-image')
-popupImageOpen.setEventListeners();
+const openPopupImage = new PopupWithImage('.popup-image')
+openPopupImage.setEventListeners();
 
 // Создание новой карточки ============================================================= //
 
 // создаем карточку
 function createCard(data) {
-  const handleCardClick = popupImageOpen.open.bind(popupImageOpen);
+  const handleCardClick = openPopupImage.open.bind(openPopupImage);
   const card = new Card({ data, handleCardClick }, '#card-template');
   return card.generateCard()
 }

@@ -21,7 +21,6 @@ export default class Popup {
   // закрываем попап по кнопке Esc
   _handleEscClosePopup(evt) {
     if (evt.key === "Escape") {
-      const openedPopup = document.querySelector(".popup_opened")
       this.close();
     }
   }
