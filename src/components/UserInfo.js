@@ -1,20 +1,20 @@
-export default class UserInfo {
-  constructor({userName, userJob}) {
-    this._userName = document.querySelector(userName);
-    this._userJob = document.querySelector(userJob);
+export class UserInfo {
+  constructor({ profileNameSelector, profileJobSelector }) { // добавить третий аргумент 'profileAvatarSelector'
+    this._nameElement = document.querySelector(profileNameSelector);
+    this._jobElement = document.querySelector(profileJobSelector);
+    // this._avatar = document.querySelector(profileAvatarSelector);
   }
-
   // метод возвращает объект с данными пользователя
   getUserInfo() {
-    const dataUser = {};
-    dataUser.text_name = this._userName.textContent;
-    dataUser.text_job = this._userJob.textContent;
-    return dataUser;
-}
-  
+    return {
+      name: this._nameElement.textContent,
+      job: this._jobElement.textContent
+    }
+  }
   //метод принимает новые данные пользователя
-  setUserInfo({ text_name, text_job }) {
-    this._userName.textContent = text_name;
-    this._userJob.textContent = text_job;
+  setUserInfo(title, job) { // добавить третий аргумент 'avatar' и выставить его src
+    this._nameElement.textContent = title;
+    this._jobElement.textContent = job;
+    this._avatar.src = avatar; // примерный код обновления аватара
   }
 }

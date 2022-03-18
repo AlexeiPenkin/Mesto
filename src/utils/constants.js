@@ -1,4 +1,4 @@
-export const formValidation = ({
+export const validationConfig = ({
   formSelector: ".form",
   inputSelector: ".form__input",
   submitButtonSelector: ".form__submit-button",
@@ -11,9 +11,14 @@ export const inputCardName = document.querySelector("[name='title']");
 export const inputJob = document.querySelector("[name='text_job']");
 export const inputName = document.querySelector("[name='text_name']");
 export const profileEditButton = document.querySelector(".profile__edit-button");
-export const popupImageOpen = document.querySelector(".popup.popup-image");
-export const popupImage = document.querySelector(".popup-image__image");
-export const popupImageTitle = document.querySelector(".popup-image__title");
+export const popupImageOpen = document.querySelector('.popup.popup-image');
+// imageModalWindow = popupImageOpen // '.popup_type_image' = ".popup.popup-image" //
+export const popupImage = document.querySelector('.popup-image__image');
+// imageElement = popupImage // '.popup__image' = ".popup-image__image" //
+export const popupImageTitle = document.querySelector('.popup-image__title');
+// imageCaption = popupImageTitle // '.popup__caption' = ".popup-image__title" //
+export const ESC_KEYCODE = 27;
+export const popup = document.querySelector('.popup');
 
 export const initialCards = [
   {
@@ -42,36 +47,24 @@ export const initialCards = [
   },
 ];
 
-// import ArkhangelskRegion from '../images/initialCards/ArkhangelskRegion.jpg'
-// import Kazan from '../images/initialCards/Kazan.jpeg'
-// import KrasnoyarskRegion from '../images/initialCards/KrasnoyarskRegion.jpg'
-// import SaintPetersburg from '../images/initialCards/SaintPetersburg.jpg'
-// import Sochi from '../images/initialCards/Sochi.jpg'
-// import Vladivostok from '../images/initialCards/Vladivostok.jpg'
+// export const closePopup = (popup) => {
+//   popup.classList.remove('popup_opened');
+//   document.removeEventListener('keyup', handleEscUp);
+// };
 
-// export const initialCards = [
-//   {
-//     name: "Архангельская область",
-//     link: ArkhangelskRegion,
-//   },
-//   {
-//     name: "Казань",
-//     link: Kazan,
-//   },
-//   {
-//     name: "Красноярский край",
-//     link: KrasnoyarskRegion,
-//   },
-//   {
-//     name: "Санкт-Петербург",
-//     link: SaintPetersburg,
-//   },
-//   {
-//     name: "Сочи",
-//     link: Sochi,
-//   },
-//   {
-//     name: "Владивосток",
-//     link: Vladivostok,
-//   },
-// ];
+// export const openPopup = (popup) => {
+//   popup.classList.add('popup_opened');
+//   document.addEventListener('keyup', handleEscUp);
+// };
+
+// export const handleEscUp = (evt) => {
+//   evt.preventDefault();
+//   isEscEvent(evt, closePopup);
+// }
+
+export const isEscEvent = (evt, action) => {
+  const activePopup = document.querySelector('.popup_opened');
+  if (evt.which === ESC_KEYCODE) {
+    action(activePopup);
+  }
+};

@@ -1,36 +1,36 @@
-import Popup from './Popup.js'
+import { Popup } from './Popup.js'
 
-export default class PopupWithForm extends Popup {
-  constructor(popupSelector, formSubmit) {
+export class PopupWithForm extends Popup {
+  constructor(popupSelector, handleSubmit) {
     super(popupSelector)
-    this._formSubmit = formSubmit;
-    this.form = this._popup.querySelector('.form');
-    this._inputList = Array.from(this.form.querySelectorAll('.form__input'));
+    this._handleSubmit = handleSubmit;
+    this._form = this._popup.querySelector('.form');
   }
-
   // собираем данные всех полей формы
   _getInputValues() {
-    this._formValues = {};
-    this._inputList.forEach((input) => {
-      this._formValues[input.name] = input.value;
+    const inputs = [this.form.querySelectorAll('.form__input')]
+    const values = {}
+    inputs.forEach((input) => {
+      values[input.name] = input.value;
     });
-    return this._formValues;
+    return values;
+  }
+
+  changeSubmitHandler(newSubmitHandler) {
+    this._handleSubmit = newSubmitHandler
   }
 
   // добавляем обработчик клика иконке закрытия и обработчик сабмита формы
   setEventListeners() {
-    super.setEventListeners(``);
-    this.form.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      console.log(this._getInputValues());
-      this._formSubmit(this._getInputValues());
-      this.close();
+    super.setEventListeners();
+    this._form.addEventListener('submit', (evt) => {
+      evt.preventDefault()
+      this._handleSubmit(this._getInputValues)
     })
   }
-
   // закрываем попап
   close() {
     super.close();
-    this.form.reset();
+    this._form.reset();
   }
 }
