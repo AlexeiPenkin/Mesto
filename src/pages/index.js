@@ -8,13 +8,13 @@ import { PopupWithImage } from '../components/PopupWithImage.js';
 import { UserInfo } from '../components/UserInfo.js';
 import { initialCards } from '../utils/constants.js'; //closePopup, openPopup,
 import { validationConfig } from '../utils/constants.js';
-import '../pages/index.css';
+import './index.css';
 
 let userId
 
 api.getProfile()
   .then(res => {
-    userInfo.setUserInfo(res.name, res.about);
+    userInfo.setUserInfo(res.name, res.about, res.avatar);
 
     userId = res._id
   })
@@ -100,9 +100,9 @@ cardFormValidator.enableValidation();
 const handleProfileFormSubmit = (data) => {
   const { name, description } = data
 
-  api.editProfile(name, description)
+  api.editProfile(name, about)
   .then(() => {
-    userInfo.setUserInfo(name, description)
+    userInfo.setUserInfo(name, about)
     editProfilePopup.close()
   })
 };
@@ -163,10 +163,10 @@ const renderCard = (data, cardList) => { // line 89 (inidex.js-4) // wrap = card
 };
 
 openEditFormButton.addEventListener('click', () => {
-  const { name, job } = userInfo.getUserInfo()
+  const { name, job } = userInfo.getUserInfo(name, job)
   titleInputValue.value = name;
   descriptionInputValue.value = job;
-  addCardPopup.open()
+  editProfilePopup.open()
 });
 
 openCardFormButton.addEventListener('click', () => {
@@ -176,29 +176,33 @@ openCardFormButton.addEventListener('click', () => {
 
 const section = new Section({items: initialCards, renderer: renderCard}, '.card-list')
 const imagePopup = new PopupWithImage('.popup.popup-image')
-const addCardPopup = new PopupWithForm('.popup.add-card', handleCardFormSubmit)
 const editProfilePopup = new PopupWithForm('.popup.edit-profile', handleProfileFormSubmit)
+const addCardPopup = new PopupWithForm('.popup.add-card', handleCardFormSubmit)
 const confirmPopup = new PopupWithForm('.popup_delete-confirm')
-// const avatarPopup = new PopupWithForm('.update-avatar', () => { // примерный код обновления аватара
-//   api.updateAvatar()
-//   .then(res => {
-//     userInfo.setUserInfo(res.name, res.abjout, res.avatar)
-//     avatarPopup.close()
-//   })
-// })
+const avatarPopup = new PopupWithForm('.update-avatar', () => {
+  api.updateAvatar()
+  .then(res => {
+    userInfo.setUserInfo(res.name, res.abjout, res.avatar)
+    avatarPopup.close()
+  })
+})
 
-
+  // api.changeAvatar(avatar)
+  // .then((res) => {
+  //   console.log(res)
+  //   userInfo.setUserInfo(res);
+  // })
 
 imagePopup.setEventListeners()
 addCardPopup.setEventListeners()
 editProfilePopup.setEventListeners()
 confirmPopup.setEventListeners()
-// avatarPopup.setEventListeners()  // примерный код обновления аватара
+avatarPopup.setEventListeners()
 
 section.renderItems()
 
 const userInfo = new UserInfo({ 
   profileNameSelector: '.profile__name', 
   profileJobSelector: '.profile__job',
-  // profileAvatarSelector: '...' // примерный код обновления аватара
+  profileAvatarSelector: '[name="url_avatar"]'
 })

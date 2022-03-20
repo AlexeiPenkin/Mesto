@@ -17,7 +17,7 @@ export const popupImage = document.querySelector('.popup-image__image');
 // imageElement = popupImage // '.popup__image' = ".popup-image__image" //
 export const popupImageTitle = document.querySelector('.popup-image__title');
 // imageCaption = popupImageTitle // '.popup__caption' = ".popup-image__title" //
-export const ESC_KEYCODE = 27;
+// export const ESC_KEYCODE = 27;
 export const popup = document.querySelector('.popup');
 
 export const initialCards = [

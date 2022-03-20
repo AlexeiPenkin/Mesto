@@ -12,7 +12,7 @@ export class UserInfo {
     }
   }
   //метод принимает новые данные пользователя
-  setUserInfo(title, job) { // добавить третий аргумент 'avatar' и выставить его src
+  setUserInfo({ title, job, avatar }) { // добавить третий аргумент 'avatar' и выставить его src
     this._nameElement.textContent = title;
     this._jobElement.textContent = job;
     this._avatar.src = avatar; // примерный код обновления аватара

@@ -21,7 +21,9 @@
 @import url(../blocks/card/__button_like/card__button_like.css);
 @import url(../blocks/card/__button_like/_active/card__button_like_active.css);
 @import url(../blocks/card/__group/card__group.css);
+@import url(../blocks/card/__group-like/card__group-like.css);
 @import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__like-count/card__like-count.css);
 @import url(../blocks/card/__name/card__name.css);
 
 @import url(../blocks/form/form.css); /* блок "form" */

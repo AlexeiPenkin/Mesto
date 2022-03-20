@@ -60,7 +60,24 @@
           </form> 
         </div> 
       </div>
-      
+
+      <section class="card-list">
+      </section>
+
+      <div class="popup popup-image">
+        <div class="popup-image__container">
+          <div class="popup-image__content">
+            <button type="button" class="popup__close-button"></button>
+            <figure class="popup-image__figure">
+              <img class="popup-image__image" src="#" alt="#">
+                <figcaption>
+                  <p class="popup-image__title"></p>
+                </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
       <div class="popup popup_delete-confirm">
         <div class="popup__container">
             <button type="button" class="popup__close-button" name="addCard_close"></button>
@@ -83,23 +100,6 @@
             </form>
         </div>
     </div>
-
-      <section class="card-list">
-      </section>
-
-      <div class="popup popup-image">
-        <div class="popup-image__container">
-          <div class="popup-image__content">
-            <button type="button" class="popup__close-button"></button>
-            <figure class="popup-image__figure">
-              <img class="popup-image__image" src="#" alt="#">
-                <figcaption>
-                  <p class="popup-image__title"></p>
-                </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
       
     </main>
     <footer class="footer">
@@ -112,10 +112,13 @@
       <button class="card__button_delete" type="button"></button>
       <div class="card__group">
         <h2 class="card__name"></h2>
-        <button class="card__button_like" type="button"></button>
-        <span class="card__like-count"></span>
+        <div class="card__group-like">
+          <button class="card__button_like" type="button"></button>
+          <p class="card__like-count">0</p>
+        </div>
       </div>
     </article>
   </template>
 </body>
 </html>
+

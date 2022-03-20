@@ -1,5 +1,3 @@
-import { ESC_KEYCODE } from '../utils/constants.js'
-
 export class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
@@ -19,7 +17,7 @@ export class Popup {
   }
   // закрываем попап по кнопке Esc
   _handleEscClose(evt) {
-    if (evt.key === ESC_KEYCODE) { 
+    if (evt.key === "Escape") { 
       this.close();
     }
   }
