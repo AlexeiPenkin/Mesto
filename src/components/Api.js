@@ -1,4 +1,4 @@
-class Api {
+export class Api {
   constructor({ baseUrl, headers }) {
     this._headers = headers
     this._baseUrl = baseUrl
@@ -72,6 +72,19 @@ class Api {
     .then(res => res.ok ? res.json() : Promise.reject(res.status))
     .catch(console.log)
   }
+
+  updateAvatar(url) {
+    return fetch(`${this._endpoint}/users/me/avatar`, {
+      method: 'PATCH',
+      headers: this._headers, 
+      body: JSON.stringify({
+        avatar: url
+      })
+    })
+    .then(res => res.ok ? res.json() : Promise.reject(res.status))
+    .catch(console.log)
+  }
+
 }
 
 export const api = new Api ({

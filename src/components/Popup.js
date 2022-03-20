@@ -8,12 +8,12 @@ export class Popup {
   // открываем попап
   open() {
     this._popup.classList.add(this._popupOpenClass);
-    document.addEventListener("keyup", this._handleEscClose);
+    document.addEventListener("keydown", this._handleEscClose);
   }
   // закрываем попап
   close() {
     this._popup.classList.remove(this._popupOpenClass);
-    document.removeEventListener("keyup", this._handleEscClose);
+    document.removeEventListener("keydown", this._handleEscClose);
   }
   // закрываем попап по кнопке Esc
   _handleEscClose(evt) {
@@ -25,7 +25,10 @@ export class Popup {
   setEventListeners() {
     const popupCloseButton = this._popup.querySelector(this._popupCloseButtonClass)
     this._popup.addEventListener('click', (evt) => {
-      if(!evt.target.closest('.popup__content') || evt.target === popupCloseButton) {
+      if(evt.target.classList.contains(this._popupOpenClass)) {
+        this.close()
+      }
+      if(evt.target.classList.contains(this._popupCloseButtonClass)) {
         this.close()
       }
     })

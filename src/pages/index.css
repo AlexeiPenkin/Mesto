@@ -9,6 +9,7 @@
 @import url(../blocks/profile/profile.css); /* блок profile" */
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-update/profile__avatar-update.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__job/profile__job.css);
@@ -21,10 +22,10 @@
 @import url(../blocks/card/__button_like/card__button_like.css);
 @import url(../blocks/card/__button_like/_active/card__button_like_active.css);
 @import url(../blocks/card/__group/card__group.css);
-@import url(../blocks/card/__group-like/card__group-like.css);
 @import url(../blocks/card/__image/card__image.css);
-@import url(../blocks/card/__like-count/card__like-count.css);
 @import url(../blocks/card/__name/card__name.css);
+@import url(../blocks/card/__group-like/card__group-like.css);
+@import url(../blocks/card/__likes-number/card__likes-number.css);
 
 @import url(../blocks/form/form.css); /* блок "form" */
 @import url(../blocks/form/__field/form__field.css);

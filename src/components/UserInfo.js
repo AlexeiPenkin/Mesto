@@ -1,8 +1,8 @@
 export class UserInfo {
-  constructor({ profileNameSelector, profileJobSelector }) { // добавить третий аргумент 'profileAvatarSelector'
+  constructor({ profileNameSelector, profileJobSelector, profileAvatarSelector }) {
     this._nameElement = document.querySelector(profileNameSelector);
     this._jobElement = document.querySelector(profileJobSelector);
-    // this._avatar = document.querySelector(profileAvatarSelector);
+    this._avatar = document.querySelector(profileAvatarSelector);
   }
   // метод возвращает объект с данными пользователя
   getUserInfo() {
@@ -12,9 +12,9 @@ export class UserInfo {
     }
   }
   //метод принимает новые данные пользователя
-  setUserInfo({ title, job, avatar }) { // добавить третий аргумент 'avatar' и выставить его src
+  setUserInfo({ title, job, avatar }) {
     this._nameElement.textContent = title;
     this._jobElement.textContent = job;
-    this._avatar.src = avatar; // примерный код обновления аватара
+    this._avatar.src = avatar;
   }
 }

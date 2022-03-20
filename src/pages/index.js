@@ -1,27 +1,26 @@
 import { api, Api } from '../components/Api.js';
 import { Card } from '../components/Card.js';
 import { FormValidator } from '../components/FormValidator.js';
-import { Section } from '../components/Section.js';
 import { Popup } from '../components/Popup.js';
+import { PopupDeleteCard } from '../components/PopupDeleteCard.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
+import { Section } from '../components/Section.js';
 import { UserInfo } from '../components/UserInfo.js';
-import { initialCards } from '../utils/constants.js'; //closePopup, openPopup,
-import { validationConfig } from '../utils/constants.js';
+import { initialCards, validationConfig } from '../utils/constants.js';
 import './index.css';
 
-let userId
+let userId;
 
 api.getProfile()
   .then(res => {
     userInfo.setUserInfo(res.name, res.about, res.avatar);
-
     userId = res._id
   })
 
 api.getCards()
-.then(cardList => {
-  cardList.forEach(data => {
+.then(placeWrap => {
+  placeWrap.forEach(data => {
     const card = createCard({
       name: data.name,
       link: data.link,
@@ -33,33 +32,6 @@ api.getCards()
     section.addItem(card);
   })
 })
-
-// const initialCards = [
-//   {
-//     name: "Сочи",
-//     link: "https://images.unsplash.com/photo-1576096945991-8f93bc88e924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1727&q=80",
-//   },
-//   {
-//     name: "Санкт-Петербург",
-//     link: "https://images.unsplash.com/photo-1603955129944-7f2dbff89b04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-//   },
-//   {
-//     name: "Казань",
-//     link: "https://images.unsplash.com/photo-1628066068625-015ea7bcc21a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cnVzc2lhJTIwc2lnaHRzZWVpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-//   },
-//   {
-//     name: "Красноярский край",
-//     link: "https://www.avtodispetcher.ru/wp-content/gallery/krasnoyarsky-krai/2.jpg",
-//   },
-//   {
-//     name: "Владивосток",
-//     link: "https://content.r9cdn.net/rimg/dimg/5a/24/84a52653-city-17546-173323f0b02.jpg?width=1200&height=630&crop=true",
-//   },
-//   {
-//     name: "Архангельская область",
-//     link: "https://sun9-12.userapi.com/impf/c851220/v851220531/104efb/ScYk7ynMvXU.jpg?size=1280x874&quality=96&sign=bab021682a9afacd0853d86a143a39ef&type=album",
-//   },
-// ];
 
 const placeWrap = document.querySelector('.card-list');
 // placeWrap = cardList // '.place__list' = '.card-list' //
@@ -77,9 +49,9 @@ const profileTitle = document.querySelector('.profile__name');
 // profileTitle = profileName // '.profile__title' = ".profile__name" //
 const profileDescription = document.querySelector('.profile__job');
 // profileDescription = profileJob // '.profile__description' = ".profile__job" //
-const titleInputValue = editFormModalWindow.querySelector('.text_name');
+const titleInputValue = editFormModalWindow.querySelector('[name="text_name"]');
 // titleInputValue = inputName // '.popup__input_type_name' = '.text_name' //
-const descriptionInputValue = editFormModalWindow.querySelector('.text_job');
+const descriptionInputValue = editFormModalWindow.querySelector('[name="text_job"]');
 // descriptionInputValue = inputJob // '.popup__input_type_description' = '.text_job'//
 const cardNameInputValue = cardFormModalWindow.querySelector('.card_title');
 // cardNameInputValue = inputCardName // '.popup__input_type_card-name' = '.card_title' //
@@ -98,7 +70,7 @@ editFormValidator.enableValidation();
 cardFormValidator.enableValidation();
 
 const handleProfileFormSubmit = (data) => {
-  const { name, description } = data
+  const { name, about } = data
 
   api.editProfile(name, about)
   .then(() => {
@@ -157,9 +129,9 @@ const createCard = (data) => {
   return card.getView();
 };
 
-const renderCard = (data, cardList) => { // line 89 (inidex.js-4) // wrap = cardList
+const renderCard = (data, wrap) => { // line 89 (inidex.js-4) // wrap = placeWrap ?
   const card = createCard(data);
-  cardList.prepend(card);
+  wrap.prepend(card);
 };
 
 openEditFormButton.addEventListener('click', () => {
@@ -174,7 +146,7 @@ openCardFormButton.addEventListener('click', () => {
   addCardPopup.open()
 });
 
-const section = new Section({items: initialCards, renderer: renderCard}, '.card-list')
+const section = new Section({items: [], renderer: renderCard}, '.card-list')
 const imagePopup = new PopupWithImage('.popup.popup-image')
 const editProfilePopup = new PopupWithForm('.popup.edit-profile', handleProfileFormSubmit)
 const addCardPopup = new PopupWithForm('.popup.add-card', handleCardFormSubmit)

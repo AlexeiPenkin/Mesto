@@ -8,9 +8,9 @@ export class Card {
     this._ownerId = data.ownerId;
 
     this._cardSelector = cardSelector;
-    this._handleCardClick = handleCardClick,
-    this._handleDeleteClick = handleDeleteClick,
-    this._handleLikeClick = handleLikeClick
+    this._handleCardClick = handleCardClick;
+    this._handleDeleteClick = handleDeleteClick;
+    this._handleLikeClick = handleLikeClick;
   }
 
   _getTemplate() {
@@ -36,7 +36,6 @@ export class Card {
 
   isLiked() {
     const userHasLikedCard = this._likes.find(user => user._id === this._userId)
-
     return userHasLikedCard
   }
  
@@ -49,7 +48,6 @@ export class Card {
     this._likes = newLikes
     const likeCountElement = this._element.querySelector('.card__like-count')
     likeCountElement.textContent = this._likes.length
-
       if(this.isLiked()) {
         this._fillLike()
     } else {
