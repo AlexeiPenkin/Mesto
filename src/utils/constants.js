@@ -17,7 +17,6 @@ export const popupImage = document.querySelector('.popup-image__image');
 // imageElement = popupImage // '.popup__image' = ".popup-image__image" //
 export const popupImageTitle = document.querySelector('.popup-image__title');
 // imageCaption = popupImageTitle // '.popup__caption' = ".popup-image__title" //
-// export const ESC_KEYCODE = 27;
 export const popup = document.querySelector('.popup');
 
 export const initialCards = [
@@ -62,9 +61,9 @@ export const initialCards = [
 //   isEscEvent(evt, closePopup);
 // }
 
-export const isEscEvent = (evt, action) => {
-  const activePopup = document.querySelector('.popup_opened');
-  if (evt.which === ESC_KEYCODE) {
-    action(activePopup);
-  }
-};
+// export const isEscEvent = (evt, action) => {
+//   const activePopup = document.querySelector('.popup_opened');
+//   if (evt.which === ESC_KEYCODE) {
+//     action(activePopup);
+//   }
+// };

@@ -57,30 +57,34 @@ const cardNameInputValue = cardFormModalWindow.querySelector('.card_title');
 // cardNameInputValue = inputCardName // '.popup__input_type_card-name' = '.card_title' //
 const cardLinkInputValue = cardFormModalWindow.querySelector('.card_link');
 // cardLinkInputValue = inputCardLink // '.popup__input_type_url' = '.card_link //
+const openAvatarFormButton = document.querySelector('.profile__avatar-update');
 
 const cardSelector = '#card-template'
 
 const editForm = editFormModalWindow.querySelector('.form')
 const addCardForm = cardFormModalWindow.querySelector('.form')
+const avatarUpdateForm = document.querySelector('.form')
 
 const editFormValidator = new FormValidator(validationConfig, editForm);
 const cardFormValidator = new FormValidator(validationConfig, addCardForm);
+const avatarFormValidator = new FormValidator(validationConfig, avatarUpdateForm);
 
 editFormValidator.enableValidation();
 cardFormValidator.enableValidation();
+avatarFormValidator.enableValidation();
 
 const handleProfileFormSubmit = (data) => {
-  const { name, about } = data
+  const { name, description } = data // about => description
 
   api.editProfile(name, about)
   .then(() => {
-    userInfo.setUserInfo(name, about)
+    userInfo.setUserInfo(name, description) // about => description
     editProfilePopup.close()
   })
 };
 
 const handleCardFormSubmit = (data) => {
-  api.addCard(data['.card__name'], data.link)
+  api.addCard(data['.card__name'], data.link) // удалить
     .then(res => {
       const card = createCard({
         name: res.name,
@@ -135,7 +139,7 @@ const renderCard = (data, wrap) => { // line 89 (inidex.js-4) // wrap = placeWra
 };
 
 openEditFormButton.addEventListener('click', () => {
-  const { name, job } = userInfo.getUserInfo(name, job)
+  const { name, job } = userInfo.getUserInfo()
   titleInputValue.value = name;
   descriptionInputValue.value = job;
   editProfilePopup.open()
@@ -146,6 +150,11 @@ openCardFormButton.addEventListener('click', () => {
   addCardPopup.open()
 });
 
+openAvatarFormButton.addEventListener('click', () => {
+  avatarFormValidator.disableSubmitButton();
+  avatarPopup.open()
+});
+
 const section = new Section({items: [], renderer: renderCard}, '.card-list')
 const imagePopup = new PopupWithImage('.popup.popup-image')
 const editProfilePopup = new PopupWithForm('.popup.edit-profile', handleProfileFormSubmit)
@@ -153,17 +162,11 @@ const addCardPopup = new PopupWithForm('.popup.add-card', handleCardFormSubmit)
 const confirmPopup = new PopupWithForm('.popup_delete-confirm')
 const avatarPopup = new PopupWithForm('.update-avatar', () => {
   api.updateAvatar()
-  .then(res => {
-    userInfo.setUserInfo(res.name, res.abjout, res.avatar)
-    avatarPopup.close()
-  })
+    .then(res => {
+      userInfo.setUserInfo(title, job, link);
+      avatarPopup.close()
+    })
 })
-
-  // api.changeAvatar(avatar)
-  // .then((res) => {
-  //   console.log(res)
-  //   userInfo.setUserInfo(res);
-  // })
 
 imagePopup.setEventListeners()
 addCardPopup.setEventListeners()

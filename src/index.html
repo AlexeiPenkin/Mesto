@@ -82,28 +82,32 @@
 
       <div class="popup popup_delete-confirm">
         <div class="popup__container">
-            <button type="button" class="popup__close-button" name="addCard_close"></button>
-            <div class="popup__content">
-              <form action="" class="form">
-                <p class="popup__title">Вы уверены?</p>
-                <button type="submit" name="submit_card" class="popup__submit">Да</button>
-              </form>
-            </div>
-        </div>
-    </div>
+          <button  type="button" class="popup__close-button" name="deleteCard_close"></button>
+          <div class="popup__content">
+            <form action="" class="form">
+              <p class="popup__title">Вы уверены?</p>
+              <button type="submit" name="submit_card" class="popup__submit">Да</button>
+            </form>
+          </div>
+        </div> 
+      </div>
 
     <div class="popup update-avatar" id="popupUpdateAvatar" name="update_avatar">
       <div class="popup__container">
-        <button type="button" class="popup__close-button" name="add_update_avatar"></button>
+      <button  type="button" class="popup__close-button" name="add_update_avatar"></button>
         <form class="form" name="form-update_avatar" id="form-update_avatar" novalidate>
           <h2 class="form__title">Обновить аватар</h2>
-          <input type="url" class="form__text" name="url_avatar" placeholder="Ваш аватар" required minlength="2">
-            <span class="form__error" id="url_avatar-error"></span>
-            <button type="submit" name="submit_card" class="form__submit">Сохранить</button>
-        </form>
-      </div>
+          <fieldset class="form__set">
+            <label class="form__field">
+              <input type="url" class="form__input" name="url_avatar" id="avatar_link" placeholder="Ваш аватар" required minlength="2">
+              <span class="form__error" id="url_avatar-error"></span>
+            </label>
+            <button type="submit" class="form__submit form__submit-button" name="submit_card">Сохранить</button>
+          </fieldset>
+        </form> 
+      </div> 
     </div>
-      
+
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
