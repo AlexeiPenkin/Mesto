@@ -12,8 +12,8 @@ export class UserInfo {
     };
   }
   //метод принимает новые данные пользователя
-  setUserInfo({ title, job, avatar }) {
-    this._nameElement.textContent = title;
+  setUserInfo({ name, job, avatar }) {
+    this._nameElement.textContent = name;
     this._jobElement.textContent = job;
     this._avatar.src = avatar;
   }

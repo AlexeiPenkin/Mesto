@@ -163,7 +163,7 @@ const confirmPopup = new PopupWithForm('.popup_delete-confirm')
 const avatarPopup = new PopupWithForm('.update-avatar', () => {
   api.updateAvatar()
     .then(res => {
-      userInfo.setUserInfo(title, job, link);
+      userInfo.setUserInfo(res.name, res.about, res.avatar);
       avatarPopup.close()
     })
 })
