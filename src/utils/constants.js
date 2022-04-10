@@ -20,7 +20,7 @@ export const profileName = document.querySelector('.profile__name');
 export const profileJob = document.querySelector('.profile__job');
 export const avatarImage = document.querySelector('.profile__avatar');
 export const avatarPopupButton = document.querySelector('.profile__avatar-update');
-export const avatarInputValue = document.querySelector('.form__input__update-avatar');
+export const avatarInputValue = document.querySelector('.form__input_update-avatar');
 
 export const initialCards = [
   {
