@@ -78,7 +78,15 @@ export class FormValidator {
   };
 
   enableValidation() {
+<<<<<<< HEAD
     this.form.addEventListener('submit', (evt) => {
+=======
+<<<<<<< HEAD:src/components/FormValidator.js
+    this.form.addEventListener('submit', (evt) => {
+=======
+    this._form.addEventListener('submit', (evt) => {
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:scripts/FormValidator.js
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
       evt.preventDefault();
     });
 

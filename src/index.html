@@ -8,17 +8,42 @@
 <body>
   <div class="page">
     <header class="header">
+<<<<<<< HEAD
         <a href="#"><img src="<%=require('./image/Header_Mesto_Logo.png')%>" alt="Логотип Mesto" class="header__logo"></a>
+=======
+<<<<<<< HEAD
+        <a href="#"><img src="<%=require('./image/Header_Mesto_Logo.png')%>" alt="Логотип Mesto" class="header__logo"></a>
+=======
+        <a href="#"><img src="<%=require('./image/Header_Logo.svg')%>" alt="Логотип Mesto" class="header__logo"></a>
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
     </header>
     <main>
       <section class="profile">
         <picture class="profile__avatar-update">
+<<<<<<< HEAD
+          <img class="profile__avatar" src="<%=require('./image/custo.jpg')%>" alt="Путешественник и учёный Жак-Ив Кусто">
+=======
+<<<<<<< HEAD
           <img class="profile__avatar" src="<%=require('./image/custo.jpg')%>" alt="Путешественник и учёный Жак-Ив Кусто">
         </picture>
         <div class="profile__info">
           <h1 class="profile__name"><!--Жак-Ив Кусто--></h1>
           <button class="profile__edit-button" type="button"></button>
           <h2 class="profile__job"><!--Исследователь океана--></h2>
+=======
+          <img class="profile__avatar" src="<%=require('./image/Jacques-Yves-Cousteau.jpg')%>" alt="Путешественник и учёный Жак-Ив Кусто">
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
+        </picture>
+        <div class="profile__info">
+          <h1 class="profile__name"><!--Жак-Ив Кусто--></h1>
+          <button class="profile__edit-button" type="button"></button>
+<<<<<<< HEAD
+          <h2 class="profile__job"><!--Исследователь океана--></h2>
+=======
+          <h2 class="profile__job">Исследователь океана</h2>
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
@@ -29,12 +54,30 @@
           <form class="form" name="form-edit-profile" novalidate>
             <h2 class="form__title">Редактировать профиль</h2>
             <fieldset class="form__set">
+<<<<<<< HEAD
               <label class="form__field form__field_type-name">
                 <input type="text" name="name" id="name" class="form__input form__input-name" placeholder="Введите имя" required minlength="2" maxlength="40">
                 <span id="text_name-error" class="name-error form__input-error"></span>
               </label>
               <label class="form__field form__field_type-info">
                 <input type="text" name="about" id="job" class="form__input form__input-job" placeholder="Введите информацию о себе" required minlength="2" maxlength="200">
+=======
+<<<<<<< HEAD
+              <label class="form__field form__field_type-name">
+                <input type="text" name="name" id="name" class="form__input form__input-name" placeholder="Введите имя" required minlength="2" maxlength="40">
+                <span id="text_name-error" class="name-error form__input-error"></span>
+              </label>
+              <label class="form__field form__field_type-info">
+                <input type="text" name="about" id="job" class="form__input form__input-job" placeholder="Введите информацию о себе" required minlength="2" maxlength="200">
+=======
+              <label class="form__field">
+                <input type="text" name="text_name" id="name" class="form__input" placeholder="Введите имя" required minlength="2" maxlength="40">
+                <span id="text_name-error" class="name-error form__input-error"></span>
+              </label>
+              <label class="form__field">
+                <input type="text" name="text_job" id="job" class="form__input" placeholder="Введите информацию о себе" required minlength="2" maxlength="200">
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
                 <span id="text_job-error" class="job-error form__input-error"></span>
               </label>
               <button type="submit" class="form__submit form__submit-button">Сохранить</button>
@@ -49,12 +92,30 @@
           <form class="form" name="form-add-card" novalidate>
             <h2 class="form__title">Новое место</h2>
             <fieldset class="form__set">
+<<<<<<< HEAD
               <label class="form__field form__field_type-name">
                 <input type="text" name="title" id="title" class="form__input form__input-title" placeholder="Название" required minlength="1" maxlength="30">
                 <span id="card_title-error" class="title-error form__input-error"></span>
               </label>
               <label class="form__field form__field_type-info">
                 <input type="url" name="link" id="link" class="form__input form__input-link" placeholder="Ссылка на картинку" required>
+=======
+<<<<<<< HEAD
+              <label class="form__field form__field_type-name">
+                <input type="text" name="title" id="title" class="form__input form__input-title" placeholder="Название" required minlength="1" maxlength="30">
+                <span id="card_title-error" class="title-error form__input-error"></span>
+              </label>
+              <label class="form__field form__field_type-info">
+                <input type="url" name="link" id="link" class="form__input form__input-link" placeholder="Ссылка на картинку" required>
+=======
+              <label class="form__field">
+                <input type="text" name="card_title" id="title" class="form__input" placeholder="Название" required minlength="1" maxlength="30">
+                <span id="card_title-error" class="title-error form__input-error"></span>
+              </label>
+              <label class="form__field">
+                <input type="url" name="card_link" id="link" class="form__input" placeholder="Ссылка на картинку" required>
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
                 <span id="card_link-error" class="link-error form__input-error"></span>
               </label>
               <button type="submit" class="form__submit form__submit-button form__submit_type_place">Создать</button>
@@ -62,13 +123,29 @@
           </form> 
         </div> 
       </div>
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+      
+=======
+
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
       <section class="card-list">
       </section>
 
       <div class="popup popup-image">
         <div class="popup-image__container">
+<<<<<<< HEAD
           <div class="popup-image__content">
+=======
+<<<<<<< HEAD
+          <div class="popup-image__content">
+=======
+          <div class="popup__content">
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
             <button type="button" class="popup__close-button"></button>
             <figure class="popup-image__figure">
               <img class="popup-image__image" src="#" alt="#">
@@ -79,6 +156,10 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+      
+=======
+<<<<<<< HEAD
       
       <div class="popup popup_delete-confirm">
         <div class="popup__container popup__container-update"> 
@@ -100,11 +181,49 @@
             <span id="avatar_link-error" class="link-error form__input-error"></span>
           </label>
           <button type="submit" class="form__submit form__submit-button">Сохранить</button>
+=======
+
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
+      <div class="popup popup_delete-confirm">
+        <div class="popup__container popup__container-update"> 
+        <button type="button" class="popup__close-button"></button>
+          <form class="form form_delete-confirm" novalidate>
+            <h2 class="form__title">Вы уверены?</h2>
+              <button type="submit" class="form__submit form__submit-button form__submit_type_delete-confirm">Да</button>
+          </form> 
+        </div> 
+      </div>
+
+    <div class="popup popup_update-avatar" id="popupUpdateAvatar" name="update_avatar">
+      <div class="popup__container  popup__container-update"> 
+      <button type="button" class="popup__close-button" name="add_update_avatar"></button>
+        <form class="form form_update-avatar" name="form-update_avatar" id="form-update_avatar" novalidate>
+          <h2 class="form__title">Обновить аватар</h2>
+<<<<<<< HEAD
+          <label class="form__field form__field_type-info">
+            <input type="url" name="avatar" id="link" class="form__input form__input__update-avatar" placeholder="Ваш аватар" required>
+            <span id="avatar_link-error" class="link-error form__input-error"></span>
+          </label>
+          <button type="submit" class="form__submit form__submit-button">Сохранить</button>
+=======
+          <fieldset class="form__set">
+            <label class="form__field">
+              <input type="url" class="form__input" name="url_avatar" id="avatar_link" placeholder="Ваш аватар" required minlength="2">
+              <span class="form__error" id="url_avatar-error"></span>
+            </label>
+            <button type="submit" class="form__submit form__submit-button" name="submit_card">Сохранить</button>
+          </fieldset>
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
         </form> 
       </div> 
     </div>
 
     </main>
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 
     <footer class="footer">
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
@@ -120,11 +239,44 @@
         <h2 class="card__name"></h2>
         <div class="card__group-like">
           <button class="card__like-button" type="button"></button>
+=======
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
+    
+  </div>
+
+  <template id="card-template">
+    <article class="card">
+      <img class="card__image">
+      <button class="card__delete-button" type="button"></button>
+      <div class="card__group">
+        <h2 class="card__name"></h2>
+        <div class="card__group-like">
+<<<<<<< HEAD
+          <button class="card__like-button" type="button"></button>
+=======
+          <button class="card__button_like" type="button"></button>
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
           <p class="card__like-count">0</p>
         </div>
       </div>
     </article>
   </template>
+<<<<<<< HEAD
 
 </body>
 </html>
+=======
+<<<<<<< HEAD
+
+</body>
+</html>
+=======
+</body>
+</html>
+
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b

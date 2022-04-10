@@ -2,6 +2,14 @@
   display: block;
   position: relative;
   cursor: pointer;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  /* width: 26px;
+  height: 26px; */
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
 }
 
 .profile__avatar-update:after {
@@ -9,7 +17,15 @@
   position: absolute;
   top: 0;
   left: 0;
+<<<<<<< HEAD
   background-image: url('../../../image/Update_Avatar_Icon.svg');
+=======
+<<<<<<< HEAD
+  background-image: url('../../../image/Update_Avatar_Icon.svg');
+=======
+  background-image: url('/src/image/Update_Avatar_Icon.svg');
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
   background-color: #000;
   background-repeat: no-repeat;
   background-position: center;

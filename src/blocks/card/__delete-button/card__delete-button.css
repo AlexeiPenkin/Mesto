@@ -1,4 +1,18 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:src/blocks/card/__delete-button/card__delete-button.css
 .card__delete-button {
+========
+=======
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
+<<<<<<< HEAD:src/blocks/card/__delete-button/card__delete-button.css
+.card__delete-button {
+=======
+.card__button_delete {
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:src/blocks/card/__button_delete/card__button_delete.css
+<<<<<<< HEAD
+>>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b:src/blocks/card/__button_delete/card__button_delete.css
+=======
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
   border: none;
   cursor: pointer;
   background: none;
@@ -14,6 +28,20 @@
   transition: .2s;
 }
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:src/blocks/card/__delete-button/card__delete-button.css
 .card__delete-button:hover {
+========
+=======
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
+<<<<<<< HEAD:src/blocks/card/__delete-button/card__delete-button.css
+.card__delete-button:hover {
+=======
+.card__button_delete:hover {
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:src/blocks/card/__button_delete/card__button_delete.css
+<<<<<<< HEAD
+>>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b:src/blocks/card/__button_delete/card__button_delete.css
+=======
+>>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
   opacity: 0.6;
 }
