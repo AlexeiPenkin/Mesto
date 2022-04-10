@@ -2,8 +2,6 @@
   display: block;
   position: relative;
   cursor: pointer;
-  /* width: 26px;
-  height: 26px; */
 }
 
 .profile__avatar-update:after {
@@ -11,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('/src/image/Update_Avatar_Icon.svg');
+  background-image: url('../../../image/Update_Avatar_Icon.svg');
   background-color: #000;
   background-repeat: no-repeat;
   background-position: center;

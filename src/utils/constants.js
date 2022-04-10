@@ -1,4 +1,4 @@
-export const validationConfig = ({
+export const formValidation = ({
   formSelector: ".form",
   inputSelector: ".form__input",
   submitButtonSelector: ".form__submit-button",
@@ -6,18 +6,21 @@ export const validationConfig = ({
   inputErrorClass: ".form__input_type_error",
   errorClass: ".form__input-error_active",
 });
+
+export const cardSelector = '#card-template';
 export const inputCardLink = document.querySelector("[name='link']");
 export const inputCardName = document.querySelector("[name='title']");
-export const inputJob = document.querySelector("[name='text_job']");
-export const inputName = document.querySelector("[name='text_name']");
 export const profileEditButton = document.querySelector(".profile__edit-button");
-export const popupImageOpen = document.querySelector('.popup.popup-image');
-// imageModalWindow = popupImageOpen // '.popup_type_image' = ".popup.popup-image" //
-export const popupImage = document.querySelector('.popup-image__image');
-// imageElement = popupImage // '.popup__image' = ".popup-image__image" //
-export const popupImageTitle = document.querySelector('.popup-image__title');
-// imageCaption = popupImageTitle // '.popup__caption' = ".popup-image__title" //
-export const popup = document.querySelector('.popup');
+export const popupImageOpen = document.querySelector(".popup.popup-image");
+export const popupImage = document.querySelector(".popup-image__image");
+export const popupImageTitle = document.querySelector(".popup-image__title");
+export const titleInputValue = document.querySelector('.form__input-name');
+export const descriptionInputValue = document.querySelector('.form__input-job');
+export const profileName = document.querySelector('.profile__name');
+export const profileJob = document.querySelector('.profile__job');
+export const avatarImage = document.querySelector('.profile__avatar');
+export const avatarPopupButton = document.querySelector('.profile__avatar-update');
+export const avatarInputValue = document.querySelector('.form__input__update-avatar');
 
 export const initialCards = [
   {
@@ -45,25 +48,3 @@ export const initialCards = [
     link: "https://sun9-12.userapi.com/impf/c851220/v851220531/104efb/ScYk7ynMvXU.jpg?size=1280x874&quality=96&sign=bab021682a9afacd0853d86a143a39ef&type=album",
   },
 ];
-
-// export const closePopup = (popup) => {
-//   popup.classList.remove('popup_opened');
-//   document.removeEventListener('keyup', handleEscUp);
-// };
-
-// export const openPopup = (popup) => {
-//   popup.classList.add('popup_opened');
-//   document.addEventListener('keyup', handleEscUp);
-// };
-
-// export const handleEscUp = (evt) => {
-//   evt.preventDefault();
-//   isEscEvent(evt, closePopup);
-// }
-
-// export const isEscEvent = (evt, action) => {
-//   const activePopup = document.querySelector('.popup_opened');
-//   if (evt.which === ESC_KEYCODE) {
-//     action(activePopup);
-//   }
-// };

@@ -17,7 +17,7 @@
 .popup__close-button::after {
     position: absolute;
     content: '';
-    height: 30px;
+    height: 32px;
     border: 2px solid #fff;
     background: #fff;
     top: 0;
