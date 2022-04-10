@@ -1,7 +1,4 @@
 .popup__container {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   position: relative;
@@ -36,45 +33,3 @@
         margin-right: 19px;
     }
 }
-=======
-  max-width: 430px;
-  width: 100%;
->>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 10px;
-  background-color: #fff;
-  max-width: 430px;
-  min-height: 330px;
-  margin: 0 auto;
-  padding-left: 36px;
-  padding-right: 36px;
-  margin-top: auto;
-  margin-bottom: auto;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
-}
-
-.popup__container.popup__container-update {
-  max-width: 430px;
-  min-height: 181px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-<<<<<<< HEAD
-
-@media screen and (min-width: 320px) and (max-width: 617px) {
-    .popup__container { /* .popup__container-update */
-        max-width: 282px;
-        min-height: 322px;
-        margin: 0;
-        padding: 0;
-        padding-left: 22px;
-        padding-right: 22px;
-        margin-left: 19px;
-        margin-right: 19px;
-    }
-}
-=======
->>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
->>>>>>> 8f2d5e0bfda83508788e583874b064efe5cec55b
