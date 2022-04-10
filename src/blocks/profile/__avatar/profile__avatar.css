@@ -1,4 +1,8 @@
 .profile__avatar {
+<<<<<<< HEAD
+=======
+  display: block;
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -7,6 +11,7 @@
   min-height: 120px;
   border-radius: 50%;
   margin: 0;
+<<<<<<< HEAD
   margin-right: 30px;
   padding-bottom: 3.75px;
 }
@@ -18,6 +23,13 @@
 @media screen and (min-width: 320px) and (max-width: 617px) {
   .profile__avatar {
     margin-right: 0;
+=======
+  padding-bottom: 3.75px;
+  margin-top: 3.75px;
+}
+@media screen and (min-width: 320px) and (max-width: 617px) {
+  .profile__avatar {
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
     margin-bottom: 23px;
   }
 }

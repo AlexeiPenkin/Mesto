@@ -8,18 +8,25 @@
   background-color: transparent;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD:src/blocks/form/__input/form__input.css
   padding-bottom: 11.76px;
   /* margin-top: 54px; */
+=======
+  margin-top: 13px;
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:blocks/form/__input/form__input.css
   border-bottom: 1px solid #c4c4c4;
   transition: 0.3s;
 }
 
+<<<<<<< HEAD:src/blocks/form/__input/form__input.css
 /* .form__input.form__input-job {
   margin-top: 0;
 }
 
 .form__input.form__input-link */
 
+=======
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:blocks/form/__input/form__input.css
 .form__input:hover {
   border-bottom-color: #000;
 }
@@ -31,4 +38,7 @@
 .form__input_type_error {
   border-bottom-color: red;
 }
+<<<<<<< HEAD:src/blocks/form/__input/form__input.css
 
+=======
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:blocks/form/__input/form__input.css

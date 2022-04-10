@@ -1,9 +1,13 @@
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   max-width: 358px;
+<<<<<<< HEAD:src/blocks/form/form.css
   /* margin-bottom: 30px; */
+=======
+  margin-bottom: 36px;
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6:blocks/form/form.css
 }
 
 /* .form.form_delete-confirm {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Popup } from './Popup.js'
 
 export class PopupWithImage extends Popup {
@@ -19,3 +20,18 @@ export class PopupWithImage extends Popup {
       this._imageTitle.textContent = title;
     }
 }
+=======
+import { Popup } from "./Popup.js";
+
+export class PopupWithImage extends Popup {
+  open(text, link) {
+    const image = this._popup.querySelector(".popup-image__image");
+    const caption = this._popup.querySelector(".popup-image__title");
+
+    image.src = link;
+    caption.textContent = text;
+
+    super.open();
+  }
+}
+>>>>>>> 8dd07bf7c8019ef1f30e8549f9de877ca235a1a6
