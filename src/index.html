@@ -62,10 +62,8 @@
           </form> 
         </div> 
       </div>
-      
       <section class="card-list">
       </section>
-
       <div class="popup popup-image">
         <div class="popup-image__container">
           <div class="popup-image__content">
@@ -79,7 +77,6 @@
           </div>
         </div>
       </div>
-      
       <div class="popup popup_delete-confirm">
         <div class="popup__container popup__container-update"> 
         <button type="button" class="popup__close-button"></button>
@@ -89,15 +86,14 @@
           </form> 
         </div> 
       </div>
-
     <div class="popup popup_update-avatar" id="popupUpdateAvatar" name="update_avatar">
       <div class="popup__container  popup__container-update"> 
       <button type="button" class="popup__close-button" name="add_update_avatar"></button>
         <form class="form form_update-avatar" name="form-update_avatar" id="form-update_avatar" novalidate>
           <h2 class="form__title">Обновить аватар</h2>
           <label class="form__field form__field_type-info">
-            <input type="url" name="avatar" id="avatar" class="form__input form__input_update-avatar" placeholder="Ваш аватар" required>
-            <span id="avatar_link-error" class="link-error form__input-error"></span>
+            <input type="url" name="avatar" id="avatar" class="form__input form__input-avatar" placeholder="Ссылка на картинку" required>
+            <span id="avatar_link-error" class="avatar-error form__input-error"></span>
           </label>
           <button type="submit" class="form__submit form__submit-button">Сохранить</button>
         </form> 

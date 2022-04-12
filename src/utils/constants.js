@@ -8,8 +8,8 @@ export const formValidation = ({
 });
 
 export const cardSelector = '#card-template';
-export const inputCardLink = document.querySelector("[name='link']");
 export const inputCardName = document.querySelector("[name='title']");
+export const inputCardLink = document.querySelector("[name='link']");
 export const profileEditButton = document.querySelector(".profile__edit-button");
 export const popupImageOpen = document.querySelector(".popup.popup-image");
 export const popupImage = document.querySelector(".popup-image__image");
@@ -20,7 +20,7 @@ export const profileName = document.querySelector('.profile__name');
 export const profileJob = document.querySelector('.profile__job');
 export const avatarImage = document.querySelector('.profile__avatar');
 export const avatarPopupButton = document.querySelector('.profile__avatar-update');
-export const avatarInputValue = document.querySelector('.form__input_update-avatar');
+export const avatarInputValue = document.querySelector('.form__input-avatar');
 
 export const initialCards = [
   {

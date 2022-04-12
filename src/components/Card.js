@@ -27,11 +27,9 @@ export class Card {
   //установка слушателей
   _setEventListeners() {
     // ставим лайк
-    this._element.querySelector('.card__like-button')
-    .addEventListener('click', () => this._handleLikeClick(this._id));
+    this._likeButton.addEventListener('click', () => this._handleLikeClick(this._id));
     // удаляем карточку
-    this._element.querySelector('.card__delete-button')
-    .addEventListener('click', (evt) => this._handleDeleteClick(this._id));
+    this._deleteButton.addEventListener('click', (evt) => this._handleDeleteClick(this._id));
     // открываем фото из карточки
     this._cardImage.addEventListener('click', () => this._popupImageOpen());
   }
@@ -48,8 +46,7 @@ export class Card {
 
   setLikes(newLikes) {
     this._likes = newLikes
-    const likeCountElement = this._element.querySelector('.card__like-count')
-    likeCountElement.textContent = this._likes.length
+    this._likeCountElement.textContent = this._likes.length
 
     if(this.isLiked()) {
       this._colorLike()
@@ -59,13 +56,11 @@ export class Card {
   }
 
   _colorLike() {
-    this._element.querySelector('.card__like-button').
-      classList.add('card__like-button_active');
+    this._likeButton.classList.add('card__like-button_active');
   }
 
   _uncolorLike() {
-    this._element.querySelector('.card__like-button').
-      classList.remove('card__like-button_active');
+    this._likeButton.classList.remove('card__like-button_active');
   }
 
   _popupImageOpen() {
@@ -83,13 +78,17 @@ export class Card {
     this._cardImage.alt = `Фотография: ${this._name}`;
     this._cardImage.title = this._name;
     this._element.querySelector('.card__name').textContent = this._name;
-  
+    
+    this._likeButton = this._element.querySelector('.card__like-button');
+    this._deleteButton = this._element.querySelector('.card__delete-button');
+    this._likeCountElement = this._element.querySelector('.card__like-count');
+
     this._setEventListeners();
   
     this.setLikes(this._likes)
 
     if(this._ownerId !== this._userId) {
-      this._element.querySelector('.card__delete-button').style.display = 'none'
+      this._deleteButton.style.display = 'none'
     }
 
     return this._element;
