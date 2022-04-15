@@ -6,9 +6,9 @@ export class Section {
   }
 
   // метод отрисовки всех элементов
-  setItem() {
-    this._items.forEach(item => {
-      this.addItem(this._renderer(item));
+  renderItems(items) {
+    items.forEach(data => {
+      this.addItem(this._renderer(data));
     })
   }
 

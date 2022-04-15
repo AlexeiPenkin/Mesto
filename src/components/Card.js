@@ -56,11 +56,11 @@ export class Card {
   }
 
   _colorLike() {
-    this._likeButton.classList.add('card__like-button_active');
+    this._likeButton.classList.add(this._likeButtonActive);
   }
 
   _uncolorLike() {
-    this._likeButton.classList.remove('card__like-button_active');
+    this._likeButton.classList.remove(this._likeButtonActive);
   }
 
   _popupImageOpen() {
@@ -80,6 +80,7 @@ export class Card {
     this._element.querySelector('.card__name').textContent = this._name;
     
     this._likeButton = this._element.querySelector('.card__like-button');
+    this._likeButtonActive = ('card__like-button_active');
     this._deleteButton = this._element.querySelector('.card__delete-button');
     this._likeCountElement = this._element.querySelector('.card__like-count');
 

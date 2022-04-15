@@ -8,6 +8,8 @@ export const formValidation = ({
 });
 
 export const cardSelector = '#card-template';
+export const cardList = document.querySelector('.card-list');
+export const addCardButton = document.querySelector('.profile__add-button');
 export const inputCardName = document.querySelector("[name='title']");
 export const inputCardLink = document.querySelector("[name='link']");
 export const profileEditButton = document.querySelector(".profile__edit-button");

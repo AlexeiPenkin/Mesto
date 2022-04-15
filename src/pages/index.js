@@ -1,6 +1,6 @@
 import {
   formValidation,
-  initialCards, 
+  initialCards,
   profileEditButton,
   titleInputValue,
   descriptionInputValue,
@@ -8,7 +8,8 @@ import {
   profileJob,
   avatarPopupButton,
   avatarInputValue,
-  avatarImage
+  avatarImage,
+  addCardButton
 } from '../utils/constants.js'
 import '../pages/index.css';
 import { Card } from '../components/Card.js';
@@ -23,22 +24,53 @@ let userId
 
 // API ================================================================================== //
 
+// создаем карточку
+const createCard = (data) => {
+  const handleCardClick = openPopupImage.open.bind(openPopupImage);
+  const card = new Card(data, handleCardClick,'#card-template',
+  (id) => {
+      confirmPopup.open()
+      confirmPopup.changeSubmitHandler(() => {
+        api.deleteCard(id)
+          .then(res => {
+            card.deleteCard()
+            confirmPopup.close()
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      })
+    },
+    (id) => {
+      if(card.isLiked()) {
+        api.deleteLike(id)
+        .then(res => {
+          card.setLikes(res.likes)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      } else {
+        api.addLike(id)
+        .then(res => {
+          card.setLikes(res.likes)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }
+    },
+  );
+  return card.generateCard()
+}
+
+
 Promise.all([api.getCards(), api.getProfile()])
   .then(([cards, userData]) => {
     userInfo.setUserInfo(userData.name, userData.about, userData.avatar)
     userId = userData._id
 
-    cards.forEach(data => {
-      const card = createCard({
-        name: data.name,
-        link: data.link,
-        likes: data.likes,
-        id: data._id,
-        userId: userId,
-        ownerId: data.owner._id
-      })
-        section.addItem(card)
-    })
+    section.renderItems(cards)
   })
   .catch((err) => {
     console.log(err);
@@ -68,9 +100,12 @@ const profileEditValidator = new FormValidator(formValidation, popupProfileEditF
 profileEditValidator.enableValidation();
 
 profileEditButton.addEventListener('click', () => {
-  titleInputValue.value = profileName.textContent;
-  descriptionInputValue.value = profileJob.textContent;
-  popupProfileEditForm.open()
+  const data = userInfo.getUserInfo()
+    titleInputValue.value = data.name;
+    descriptionInputValue.value = data.about;
+
+    profileEditValidator.resetValidation();
+    popupProfileEditForm.open()
 })
 
 // ОТКРЫВАЕМ preview фото из зкарточки ================================================== //
@@ -78,21 +113,20 @@ const openPopupImage = new PopupWithImage('.popup-image')
 openPopupImage.setEventListeners();
 
 // СОЗДАЕМ новый экземпляр Section и размещаем начальный массив данных/карточек
-const section = new Section({ items: [], renderer: renderCard }, '.card-list');
-section.setItem();
+const section = new Section({ items: [], renderer: createCard }, '.card-list');
 
 // ПОДТВЕРЖДАЕМ удаление карточки ======================================================= //
 
 const confirmPopup = new PopupWithForm('.popup_delete-confirm')
 confirmPopup.setEventListeners();
 
-// ФОРМА UpdateAvatar ============================================ //
+// ФОРМА UpdateAvatar =================================================================== //
 const avatarPopup = new PopupWithForm('#popupUpdateAvatar', (data) => {
   avatarPopup.loading(true);
   const { avatar } = data
   api.updateAvatar(data.avatar)
     .then((res) => {
-      userInfo.setUserInfo(res.name, res.about, res.avatar);;
+      userInfo.setUserInfo(res.name, res.about, res.avatar);
       avatarPopup.close()
     })
     .catch((err) => {
@@ -108,16 +142,15 @@ const updateAvatarValidator = new FormValidator(formValidation, avatarPopup.form
 updateAvatarValidator.enableValidation();
 
 avatarPopupButton.addEventListener('click', () => {
-  avatarInputValue.value = avatarImage.src
+  updateAvatarValidator.resetValidation();
   avatarPopup.open();
 })
 
 // ФОРМА AddCard ================================================= //
 
 const popupAddCardForm = new PopupWithForm('#popupAddCard', (data) => {
-  // console.log(data)
   popupAddCardForm.loading(true);
-  const { title, link } = data 
+  const { title, link } = data
   api.addCard(title, link)
     .then((res) => {
       const card = createCard({
@@ -128,7 +161,6 @@ const popupAddCardForm = new PopupWithForm('#popupAddCard', (data) => {
         userId: userId,
         ownerId: res.owner._id
       })
-      console.log(res)
       section.addItem(card)
       popupAddCardForm.close()
     })
@@ -140,53 +172,23 @@ const popupAddCardForm = new PopupWithForm('#popupAddCard', (data) => {
     })
 });
 popupAddCardForm.setEventListeners();
-// создаем карточку
-const createCard = (data) => {
-  const handleCardClick = openPopupImage.open.bind(openPopupImage);
-  const card = new Card(data, handleCardClick,'#card-template',
-  (id) => {
-      confirmPopup.open()
-      confirmPopup.changeSubmitHandler(() => {
-        api.deleteCard(id)
-          .then(res => {
-            card.deleteCard()
-            confirmPopup.close()
-          })
-      })
-    },
-    (id) => {
-      if(card.isLiked()) {
-        api.deleteLike(id)
-        .then(res => {
-          card.setLikes(res.likes)
-        })
-      } else {
-        api.addLike(id)
-        .then(res => {
-          card.setLikes(res.likes)                                
-        })
-      }
-    },
-  );
-  return card.generateCard()
-}
+
 // добавляем карточку в разметку
 const renderCard = (data, cardList) => {
   const card = createCard(data);
-  cardList.prepend(card);
 }
+
 // валидация формы AddCard
 const addCardValidator = new FormValidator(formValidation, popupAddCardForm.form);
 addCardValidator.enableValidation();
-// определяем кнопку открытия формы AddCard
-const addCardButton = document.querySelector('.profile__add-button');
+
 // ставим сулшателя кнопке открытия AddCard
 addCardButton.addEventListener('click', () => {
-  // addCardValidator.resetValidation();
+  addCardValidator.resetValidation();
   popupAddCardForm.open();
 })
 
-const userInfo = new UserInfo({ 
+const userInfo = new UserInfo({
   profileNameSelector: '.profile__name',
   profileJobSelector: '.profile__job',
   profileAvatarSelector: '.profile__avatar'
