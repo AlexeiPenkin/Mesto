@@ -1,14 +1,9 @@
 import {
   formValidation,
-  initialCards,
   profileEditButton,
   titleInputValue,
   descriptionInputValue,
-  profileName,
-  profileJob,
   avatarPopupButton,
-  avatarInputValue,
-  avatarImage,
   addCardButton
 } from '../utils/constants.js'
 import '../pages/index.css';
@@ -70,7 +65,14 @@ Promise.all([api.getCards(), api.getProfile()])
     userInfo.setUserInfo(userData.name, userData.about, userData.avatar)
     userId = userData._id
 
-    section.renderItems(cards)
+    const formattedData = cards.map(data => ({
+      ...data,
+      id: data._id,
+      userId,
+      ownerId: data.owner._id,
+    }))
+
+    section.renderItems(formattedData)
   })
   .catch((err) => {
     console.log(err);
